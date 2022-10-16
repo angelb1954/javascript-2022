@@ -551,12 +551,7 @@ function* numero(){
 
 const it2 = numero();
 
-console.log(it2.next());
-console.log(it2.next());
-console.log(it2.next());
-console.log(it2.next());
-console.log(it2.next());
-console.log(it2.next());
+
 
 
 // Closure
