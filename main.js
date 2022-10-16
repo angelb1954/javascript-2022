@@ -557,7 +557,7 @@ console.log(it2.next());
 console.log(it2.next());
 console.log(it2.next());
 console.log(it2.next());
-git add .add
+
 
 // Closure
 
