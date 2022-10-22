@@ -517,48 +517,938 @@
 
 // Generadores (practica) 25/102
  
-function *nombres(){
-  yield 'Juan';
-  yield 'Maria';
-  yield 'Sergio';
-  yield 'Ari';
+// function *nombres(){
+//   yield 'Juan';
+//   yield 'Maria';
+//   yield 'Sergio';
+//   yield 'Ari';
 
-  return 'Marcos';
-}
+//   return 'Marcos';
+// }
 
-const iterator = nombres();
+// const iterator = nombres();
 
-console.log(iterator.next().value);
-console.log(iterator.next().value);
-console.log(iterator.next().value);
-console.log(iterator.next().value);
-console.log(iterator.next().value);
-console.log(iterator.next());
-
-
-for (const itItem of iterator) {
-  console.log(itItem);
-}
-
-function* numero(){
-  let contador= 0;
-  while(true){
-      yield contador;
-      contador++;
-  }
-}
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next());
 
 
-const it2 = numero();
+// for (const itItem of iterator) {
+//   console.log(itItem);
+// }
 
-console.log(it2.next());
-console.log(it2.next());
-console.log(it2.next());
-console.log(it2.next());
-console.log(it2.next());
-console.log(it2.next());
+// function* numero(){
+//   let contador= 0;
+//   while(true){
+//       yield contador;
+//       contador++;
+//   }
+// }
 
 
-// Closure
+// const it2 = numero();
+
+// console.log(it2.next());
+// console.log(it2.next());
+// console.log(it2.next());
+// console.log(it2.next());
+// console.log(it2.next());
+// console.log(it2.next());
 
 
+// Closure (teoría) 24/102
+
+
+// ejemplo 1
+
+// function generarUI(){
+// function actualizarDatos(){}
+// actualizarDatos();
+// }
+// generarUI();
+
+
+ // ejemplo 2
+
+// function generarUI(){
+// let panel = 'edicion';
+// function actualizarDatos(){
+// console . log(panel);
+// }
+// return actualizarDatos ;
+// }
+// let res = generarUI();
+
+// res();
+
+// ejemplo 3
+
+
+// function suma(n1){
+// return function(n2){
+// return n1+n2;
+// }
+// }
+// let res = suma (10);
+// console.log(res(5));
+
+
+// Clausuras (prácticas) 25/102
+
+// var nombre = 'Julio';
+
+// function uno(){
+//     console.log('Inicio funcion 1');
+
+//     var nombre = 'Marcos';
+//     console.log(this.nombre);
+
+//     function dos(){
+//         console.log('Inicio funcion 2');
+//         var nombre = 'Lena';
+//         console.log(this.nombre);
+
+//         function tres(){
+//             console.log('Inicio funcion 3');
+//             let nombre = 'Juan';
+//             console.log(nombre);
+//         }
+
+//         tres();
+
+//     }
+
+//     dos();
+// }
+
+// uno();
+
+
+// let nombre ='julio';
+
+// function uno(){
+// console.log( 'Funcion 1');
+// let nombre = 'Marcos';
+// console. log( nombre);
+
+// return function dos(){
+// console. log( 'Funcion 2');
+// nombre = 'Lena';
+// console. log( nombre);
+
+// return function tres(){
+// console. log( 'Funcion 3');
+// let nombre = 'Maria';
+// console.log(nombre);
+// }}}
+
+// const resultado01 = uno();
+// const resultado02 = resultado01();
+// const resultado03 = resultado02();
+
+//->Funcion 1
+//->Marcos
+//->Funcion 2
+//->Lena
+//->Funcion 3
+//->Maria
+
+// String (teoría) 28/102
+
+// text0.length; Conocer la longitud 
+// texto[7]=; Conocer un caracter en concreto. Basados en el índice
+// texto.indexOf(); Regresa el indice de la primera ocurrencia del texto a buscar
+// texto.lasIndexOf(); Regresa el indice de la última ocurrencia del texto a buscar
+// texto.slice(); Extrae una parte del texto y lo devuelve
+// texto.substr(); Extrae una parte del texto basado en una cantidad de caracteres
+// texto.replace(); Devuelve un texto reemplazando parte de él con otro
+// texto.upperCase(); Convierte un texto en mayúsculas
+// texto.lowerCase(); Convierte un texto en minúsculas
+// texto.concat(); Une dos o más cadenas de texto
+// texto.trim(); elimina los espacios al principio y final del texto
+// texto.split(); Convierte una cadena de texto en arreglo definido por un separador
+
+
+// Arreglos (Teoría)
+
+
+
+// | 4 | 1 | 8 | 10 | 0 | 9 |    -> arreglo
+//   0   1   2    3   4   5      -> Indice 
+
+//  let nombre = [4,1,8,10,0,9]; 
+//  // llamar a un valor del arreglo
+//  nombre[4]; //-> 0
+//  nombre[7] = 4;
+//  console.log(nombre);
+ //-> [ 4, 1, 8, 10, 0, 9, <1 empty item>, 4 ]
+
+// Obtener número de elementos de un arreglo
+
+// Array.length
+
+// Arreglos (práctica) 30/102
+
+// definir un arreglo
+
+// let nombres = new Array(5);
+// nombres[0] = 'Juan';
+// nombres[1] = 'Maria';
+// nombres[2] = 'Sergio';
+// nombres[3] = 'Lena';
+// nombres[4] = 'Ramiro';
+
+
+// listar todos los elementos
+
+// console.log(nombres);
+
+
+// nombres[10] = 'Marcos';
+
+
+// console.log(nombres, nombres[5]); 
+//-> (11) ['Juan', 'Maria', 'Sergio', 'Lena', 'Ramiro', vacío × 5, 'Marcos']
+
+// Otra forma de definir un arreglo
+
+// let calificaciones = [56, 77, 94, 79, 99, 100];
+
+// console.log(calificaciones[5]); //-> 100
+
+// nombres[1] = 23;
+// calificaciones[2] = 'Juan';
+
+ // console.log(nombres, calificaciones);
+ // -> (6) [56, 77, 'Juan', 79, 99, 100]
+ // console.log(nombres.length, calificaciones.length);
+//-> 11 6
+
+// for(let i = 0; i < nombres.length; i++){
+//     console.log(nombres[i]);
+// }
+// Juan
+// 23
+// Sergio
+// Lena
+// Ramiro
+
+// for(calificacion of calificaciones){
+//     console.log(calificacion);
+// }
+
+// 56
+// 77
+// Juan
+// 79
+// 99
+// 100
+
+
+// Metodos clásicos de arreglos (teoría) 31/102
+
+// Notación:
+// variable . metodo (params)
+
+// Insertar un nuevo elemento al final del arreglo
+// variable . push (params)
+
+// Regresa la posición de la primera coincidencia
+// variable . indexOf (params)
+// Devuelve -1 si el elemento que solicitamos no existe
+
+// Eliminar el primer elemento del arreglo
+// variable . shift (params)
+
+// Agregar un elemento al principio del arreglo
+// variable . unshift (params)
+
+// Unir los elementos de un arreglo en una cadena
+// variable . join (params) //el parametro indica el carácter de separación que queremos incluir
+
+// convertir una cadena en un arreglo
+// variable . split (params)
+
+
+// Metodos clásicos de arreglos (práctica) 32/102
+
+//  let coordenadas = [10.236, 14.334, 11.325, 15.234];
+
+
+//  // push para añadir elemento
+//  console.log('coordenadas', coordenadas);
+
+//  coordenadas.push(20.389);
+
+//  console.log('coordenadas', coordenadas);
+
+//  //indexOf para buscar el indice de un elemento
+//  const posicion = coordenadas.indexOf(14.334);
+
+ 
+//  console.log('indexof', posicion, coordenadas[posicion]);
+//  // -> indexof 1 14.334
+
+// // unshift para agregar un elemento al inicio
+
+// //  coordenadas.unshift(11.11);
+// //  console.log(coordenadas);
+// //->[11.11, 10.236, 14.334, 11.325, 15.234, 20.389]
+
+// // join convierte un arreglo en cadena
+
+// // const bienvenida = ['bienvenido', 'al', 'curso'];
+// // console.log(bienvenida.join('&'));
+// //-> bienvenido&al&curso
+
+// // split convierte una cadena en un arreglo
+
+// // const cuenta = '2356-2321-9874-9900';
+// // console.log(cuenta.split('-'));
+// //->[ '2356', '2321', '9874', '9900' ]
+
+// Métodos de arreglos avanzados (Teoria) 33/102
+
+// Flat
+// Devuelve un arreglo nuevo derivado del resultado de eliminar arreglos
+// anidados
+
+
+// Convertir arreglos anidados:
+// ||6|8||9|10||9|7|| 
+//    0    1     2    -> Indices   
+
+// en un solo arreglo:
+// |6|8|9|10|9|7|
+//  0 1 2  3 4 5       -> Indices 
+
+// let calificaciones = [[6,8],[9,10],[9,7]];
+// let resultado = calificaciones.flat();
+// console.log(resultado);
+//-> [ 6, 8, 9, 10, 9, 7 ]
+
+// Sort
+
+// Regresa un arreglo ordenado basado en una función de comparación
+
+// let arreglo = [1,8,10,0,9,3]
+// let resultado = arreglo. sort();
+// console.log(resultado)
+//-> [ 0, 1, 10, 3, 8, 9 ]
+// Vemos que no los ordena en orden númerico, sino como carácteres ASCII
+
+//Para ordenarlos numericamente habría que emplear una función de comparación
+// function compare(a,b){
+//   return a — b;}
+
+//Métodos de arreglos avanzados(práctica) 34/102
+
+// const calificaciones = [10, 7, 4, 6, 2, 8];
+// const mensajes = ['hola', 'al', 'curso', 'de', 'javascript'];
+
+//foreach (nos permite hacer un recorrido por nuestro arreglo)
+
+// el nombre de los parametros no tiene ninguna importancia, simplemente debe coincidir con la llamada
+
+// Hay varias formas de usar forEach
+
+// primera
+
+// calificaciones.forEach((elemento, indice)=>console.log(elemento, indice));
+
+//  10 0
+//  7 1
+//  4 2
+//  6 3
+//  2 4
+//  8 5
+
+//con otro nombre de parametros
+ 
+// calificaciones.forEach((a,b)=>console.log(a,b));
+//  10 0
+//  7 1
+//  4 2
+//  6 3
+//  2 4
+//  8 5
+
+
+
+//segunda
+
+//  function iteracion(elemento, indice){
+//      console.log(elemento, indice);
+//  }
+
+//  calificaciones.forEach(elemento=> console.log(elemento));
+
+// //map nos regresa una arreglo de respuesta
+
+// const nuevoArreglo = calificaciones.map((elemento, indice) =>{
+//     return elemento * 5;
+// });
+
+// const nuevoArregloMensajes = mensajes.map(elemento =>{
+//     return `** ${elemento} **`;
+// });
+
+// console.log('calificaciones',calificaciones, 'nuevoArreglo',nuevoArreglo);
+// //-> calificaciones [ 10, 7, 4, 6, 2, 8 ] nuevoArreglo [ 50, 35, 20, 30, 10, 40 ]
+// console.log(nuevoArregloMensajes);
+// //-> [ '** hola **', '** al **','** curso **', '** de **','** javascript **']
+
+//reduce permite coger todos los elementos del arreglo y acumularlos en un nuevo valor
+
+// const arregloReduce = calificaciones.reduce (acc, item)=>acc + item);
+// ;
+
+// console.log(arregloReduce);
+// //-> 37
+
+//  const arregloReduceString = mensajes.reduce((acc, item) =>acc + ' ' + item );
+
+// console.log(arregloReduceString);
+//-> hola al curso de javascript
+
+//---------------------------------------
+
+//Métodos de arreglos avanzados II(práctica) 35/102
+
+
+//Filter.
+
+//crea un nuevo array con todos los elementos que cumplan la condición implementada por la función dada.
+
+
+// const arregloFilter = calificaciones.filter(item => item < 5);
+// console.log(arregloFilter);
+// //-> [ 4, 2 ]
+
+// const arregloFilterString = mensajes.filter(item => item != 'javascript');
+// console.log(arregloFilterString);
+//-> [ 'hola', 'al', 'curso', 'de' ]
+
+//Find
+// Es parecido a filter, pero regresa unicamente la primera
+// coincidencia
+
+// const arregloFind = calificaciones.find(item =>{
+//     return item > 5;
+//     return item == 100;
+// });
+// console.log(calificaciones);
+// console.log(arregloFind);
+//->[ 10, 7, 4, 6, 2, 8 ]
+//-> 10
+
+
+//FindIndex
+
+// const index = calificaciones.findIndex(item =>{
+//     return item === 6;
+// });
+// console.log(index);
+
+
+//Some
+
+// regresa un valor booleano true o false
+
+// const existe = mensajes.some(item =>{
+//     return item === 'javascript';
+// });
+// console.log(existe);
+
+
+//----------------------------------------
+//Métodos de arreglos avanzados III(práctica) 36/102
+
+
+//flat
+
+//permite aplanar un arreglo
+
+// const parciales = [[10, 8], [7,5], [10, 10]];
+// console.log(parciales.flat());
+
+// const output = [[[[10, 5]]],[2, 8]];
+// //-> [ 10, 8, 7, 5, 10, 10 ]
+// console.log(output.flat(1));
+// //-> [ [ [ 10, 5 ] ], 2, 8 ]
+
+//sort
+
+//El método sort() ordena los elementos de un arreglo (array) localmente y devuelve el arreglo ordenado
+
+// const arregloOrdenado = calificaciones.sort((a, b) =>{
+//     if(a > b) return -1;
+
+//     if(a < b) return 1;
+
+//     return 0;
+// });
+
+// const res02 = mensajes.sort((a, b) =>{
+//   if(a < b) return -1;
+
+//   if(a > b) return 1;
+
+//   return 0;
+// });
+
+// console.log(arregloOrdenado);
+// //-> [ 10, 8, 7, 6, 4, 2 ]
+// console.log(res02);
+// //-> [ 'al', 'curso', 'de', 'hola', 'javascript' ]
+
+// Map (teoría) 37/102
+
+// La diferencia principal de un mapa con un arreglo, es que en el primero nosotros tenemos que decidir el nombre con el que llamamos a los índices
+
+
+// arreglo
+// |1|8|10|0|9|3|
+//  0 1  2 3 4 5 
+// map
+// |1  | 8   |  10  |0     | 9     |  3 |
+// Juan Maria Sergio paula  ernesto  lena
+
+
+
+// let calificaciones = new Map();
+// El método set nos permite ingresar el óndice y el valor. Primero escribimos el índice y separado con una coma el valor quecorresponde a ese índice
+// calificaciones.set("juan", "10");
+// calificaciones.set("alicia", "8");
+// calificaciones.set("pedro", "6");
+
+//Otros métodos de Map
+
+//get. Nos permite introducir el índice y obtener el valor
+
+// calificaciones.get("juan");  // =10
+
+//has. Nos permite saber si un índice existe
+
+// calificaciones.has("juan");     // =true
+
+// delete. Nos elimina el elemento y nos devuelve su valor
+
+//calificaciones.delete("juan");   //=10
+
+//clear. Elimina completamente los elementos de un mapa
+
+//calificaciones.clear("juan");
+
+
+
+// console.log(calificaciones);
+
+
+// Map (práctica) 37/102
+
+
+// const mapa = new Map();
+
+// mapa.set('juan', 10);
+// mapa.set('maria', 4);
+// mapa.set('sergio', 3);
+// mapa.set('luna', 8);
+// mapa.set('harry', 7);
+
+// console.log(mapa);
+
+// console.log(mapa.get("maria"));
+
+// mapa.set("sergio", 6);
+
+// console.log(mapa);
+// console.log(mapa.has("luna"));
+
+// for(let elemento of mapa){
+//     console.log(elemento[0]);
+// }
+
+// Set (Teoria) 39/102
+
+
+// let calificaciones= new Set();
+
+
+// calificaciones.add(10);
+// calificaciones.add(8);
+// calificaciones.add(5);
+// calificaciones.add(10);
+
+// console.log(calificaciones);
+
+//la diferencia entre set y map, es que set usa el valor como índice del elemento
+// Vemos que set no incluye el último valor de 10 porque este ya existía
+// Resulta útil usar set cuando queremos hacer un arreglo donde no se repitan los elementos
+
+// |10|8|5|  -> Valor
+//  10 8 5   -> Índice
+
+// Métodos de set
+
+//entries etorna un nuevo objeto Array Iterator que contiene los pares clave/valor para cada índice de la matriz.
+
+// let elementos = calificaciones.entries();
+
+// elementos.next().value;
+
+// console.log(elementos);
+
+// Set (prácticas) 40/102
+
+// const propiedades = new Set();
+
+// propiedades.add("color");
+// propiedades.add("tamano");
+// propiedades.add("peso");
+// propiedades.add("forma");
+
+// console.log(propiedades);
+
+// propiedades.add("color");
+
+// console.log(propiedades);
+
+// const iterador = propiedades.entries();
+
+// console.log(iterador.next().value);
+
+// for(let item of iterador){
+//     console.log(item);
+// }
+
+
+// Strings (práctica) 41-42/102
+
+// let mensaje = 'Hubo un error al procesar la solicitud';
+// console.log(mensaje);
+
+// mensaje = 'b';
+// console.log(mensaje);
+
+// mensaje = 'El usuario fue registrado con exito';
+// console.log(mensaje[5]);
+// console.log(mensaje.length);
+
+// let texto = "Bienvenidos al curso";
+// let texto02 = 'Bienvenidos al curso';
+// let texto03 = `Bientenidos al curso.
+//                 Este es el temario`;
+// console.log(texto, texto02, texto03);
+
+// let nombre = 'Marcos';
+// let header = 'Tu resumen del dia, ' + nombre;
+// let header02 = `Tu resumen del dia, ${nombre}`;
+
+// console.log(header, header02);
+
+// const nombre01 = 'Oscar';
+// const nombre02 = 'oscar';
+// console.log(nombre01 == nombre02);
+
+// //--------------------------------------
+
+// mensaje = "Curso de Javascript para principiantes";
+
+// //indexof
+// console.log(mensaje.indexOf('javascript'));
+// console.log(mensaje.indexOf(' '));
+// console.log(mensaje.indexOf('php'));
+
+// //lastIndexOf
+// console.log(mensaje.lastIndexOf('a'));
+// console.log(mensaje.lastIndexOf('ip'));
+
+// //slice
+// let res = mensaje.slice(5, 10);
+// console.log(res);
+
+// //substr
+// res = mensaje.substr(5,5);
+// console.log(res);
+
+// //replace
+// res = mensaje.replace('Javascript', '.NET');
+// console.log(res, mensaje);
+
+// //toUpperCase
+// res = mensaje.toUpperCase();
+// console.log(res);
+
+// //lowercase
+// res = mensaje.toLowerCase();
+// console.log(res);
+
+// //concat
+// let primerNombre = 'Juan ';
+// let segundoNombre = 'Camilo ';
+// let apellido = 'Garcia ';
+
+// let nombreCompleto = primerNombre.concat(segundoNombre, apellido);
+// console.log(nombreCompleto);
+
+// //trim
+//  let respuestaHTTP = '         transaccion exitosa        ';
+//  console.log(respuestaHTTP);
+//  console.log(respuestaHTTP.trim());
+
+// //split
+// const mensajeError = 'Busqueda no devolvio respuestas';
+// console.log(mensajeError.split(' '));
+// console.log(mensajeError.split(''));
+
+
+// Objetos (teoría) 43/102
+
+// Los objetos tienen llaves, clave y valor
+
+// {
+// clave :valor
+// }
+
+// arreglos de objetos
+
+// [
+// {clave :valor}
+// {clave :valor}
+// {clave :valor}
+// {clave :valor}
+// {clave :valor}
+// ]
+
+//Definir un objeto: Hay dos formas de definirlo
+
+// let isabelle= new Object();
+
+// isabelle ['altura ']= 150;
+// isabelle ['color—pelo']= "amarillo";
+// isabelle ['velocidad']= "lento";
+
+//La segunda forma de definirlo es la que habitualmente se usa por ser más ágil visualmente
+
+// let isabelle={
+// altura: 150,
+// color_pelo: "amarillo" ,
+// velocidad: "lento",
+// feliz: true,
+// chaleco: {
+// color: "verde"}
+// };
+
+// //Como acceder a las propiedades
+// isabelle.altura  //150
+// // ó
+// isabelle["velocidad"]   //lento
+// //para acceder a las propiedades de un objeto que está dentro de nuestro objeto
+// isabelle.chaleco.color   //verde
+// // para acceder a un arreglo de objetos
+
+// let personajes=[
+// {altura:150,
+// color_pelo: "amarillo",
+// chaleco:{
+//   color: "verde"
+// }
+// },
+// {altura:140,
+// color_pelo: "cafe",
+// chaleco:{
+//   color: "azul"
+// }
+// },
+// {altura:160,
+// color_pelo: "blanco",
+// chaleco:{
+//   color: "undefined"
+// }
+// }
+// ]
+
+// console.log(personajes[1]);
+// //-> { altura: 140, color_pelo: 'cafe', chaleco: { color: 'azul' } }
+
+
+// console.log(personajes[1].chaleco.color);
+// //-> azul
+
+// Objetos (prácticas) 44/102
+
+// let objeto = {
+//   nombre: 'Marcos',
+//   edad: 28,
+//   habilidades: ['programacion', 'dibujo', 'baile'],
+//   frances: false
+// };
+
+// console.log(objeto);
+// console.table(objeto);
+
+// let post = {
+//   fecha: '2020/12/12',
+//   titulo: '5 trucos VS Code',
+//   author: {
+//       nombre: 'Juanito',
+//       photo: 'img/photo.jpg',
+//   },
+//   comentarios: [
+//       {
+//           id: 1,
+//           texto: 'Buen contenido'
+//       },
+//       {
+//           id: 2,
+//           texto: 'No conocia el truco #2'
+//       }
+//   ]
+// };
+
+// console.log(post);
+// console.log(post.comentarios);
+// post.author.nombre = 'Laura';
+// console.log(post);
+// console.log(post.comentarios[0], post['comentarios'][0]);
+// console.log(post.comentarios[0].texto, post['comentarios'][0]['texto']);
+
+// post['likes'] = 56;
+
+// console.table(post);
+// console.log(post.shares);
+
+// //for...in sirve exclusivamente para objetos
+
+// for(propiedad in post){
+//   console.log(propiedad);
+// }
+
+// Métodos de objetos (teoría) 45/102
+
+// let kk = {
+// altura: 160,
+// color_pelo: "blanco" ,
+
+// }
+
+//Como añadimos un método, por ejemplo cantar
+
+// let kk = {
+//   altura: 160,
+//   color_pelo: "blanco" ,
+//   cantar: function(){
+//     return "guau";
+//   }
+  
+//    };
+
+//    console.log(kk.cantar());
+//    //->guau
+
+
+   // Métodos de objetos (práctica) 46/102
+
+//    const usuario = {
+//     id: 5,
+//     nombre: 'Sarah',
+//     edad: 38,
+//     saludo: function(){
+//         return `Hola! es un gusto que nos visites`;
+//     }
+// };
+
+// console.log(usuario.saludo());
+
+// const viaje = {
+//     tiempo: function(distancia, velocidad){
+//         return distancia / velocidad;
+//     }
+// };
+
+// console.log(viaje.tiempo(40, 60));
+
+// const viaje02 = {
+//      distancia: 40,
+//      velocidad: 60,
+//     tiempo: function(){
+//         return this.distancia / this.velocidad;
+//     }
+// };
+
+// console.log(viaje02.tiempo());
+// //-> 0.6666666666666666
+
+
+// Como funciona this (teoría) 47/102
+
+// this.Hace referencia al objeto que lo contiene
+// pero el valor depende de cómo se use
+
+// En este ejemplo this hace referencia al objeto que lo contiene
+// Se ve mucho en las clases y la POO
+
+// en un objeto this hace referencia al
+// mismo objeto, con el cual se puede
+// acceder a sus propiedades y métodos
+
+
+// let post={
+// likes: 160,
+// getLikes: function(){
+// return this.likes `likes`;
+// }
+// };
+ 
+// console.log(post);
+
+// this en una función o en un contexto
+// donde se manda a llamar sin estar en
+// ningún objeto representa al objeto Global
+
+// function prueba(){
+//   return this;
+// };
+
+// this cuando se usa en eventos contiene al
+//  elemento HTML que activó el evento
+
+
+// button addEventListener("click", function(e)
+// {console. log(this);});
+
+// this no existe bajo el contexto de las
+// funciones de flecha, por 10 tanto al
+// querer obtener la propiedad regresará
+// undefined
+// this por si solo en una función de flecha hace referencia al objeto Global
+
+// Como funciona this (práctica) 47/102
+
+// let edad = 10;
+// let nombre = 'John';
+
+// this.nombre = 'Jessica';
+// this.edad = 40;
+
+
+// const usuario = {
+//     id: 5,
+//     nombre: 'Sarah',
+//     edad: 38,
+//     saludo: function(){
+//         return `Hola ${this.nombre}!`;
+//     },
+
+//     getEdad: function(){
+//         return this.edad;
+//     }
+// };
+
+// console.log(usuario.saludo());
+// console.log(usuario.getEdad());
+// console.log(this);
