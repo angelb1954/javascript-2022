@@ -1,11 +1,8 @@
 //  https://www.youtube.com/playlist?list=PLYOJU3c8foCBA4244OpgdUAlMF14fEN7J
 
-
-
 // VARIABLES 6/102
 
 // let nombre = "Angel";
-
 
 // console.log(nombre)
 
@@ -114,7 +111,7 @@
 //   console.log("Eres mayor de edad");
 // }
 // else {
-  
+
 //   console.error("Aun no eres mayor de edad")
 // }
 
@@ -134,7 +131,7 @@
 
 // if (edad > 10) {
 //   if (edad < 18) {
-//    console.log("Aun no estas en la Universidad"); 
+//    console.log("Aun no estas en la Universidad");
 //   }
 // }
 // else (edad >= 18)
@@ -169,20 +166,20 @@
 //   default:
 //     console.log("Marcharse")
 
-    // TERNARIO 14/102
-    
-    // let likes = 4;
+// TERNARIO 14/102
 
-    // if (likes === 1) {
-    //   console.log(likes + ` like`);
-    // } else {
-    //   console.log(likes + ` likes`);
+// let likes = 4;
 
-    // }
-      
-    // USANDO EL OPERADOR TERNARIO
+// if (likes === 1) {
+//   console.log(likes + ` like`);
+// } else {
+//   console.log(likes + ` likes`);
 
-    // console.log((likes===1)? likes +` like` : likes + ` likes`)
+// }
+
+// USANDO EL OPERADOR TERNARIO
+
+// console.log((likes===1)? likes +` like` : likes + ` likes`)
 
 //CICLOS 13-14/102
 
@@ -201,8 +198,6 @@
 // } while expresión ) ;
 // EI código se ejecuta antes de evaluar la expresión
 
- 
-  
 //   while (expresión) {
 //     // código...
 //   }
@@ -210,14 +205,12 @@
 
 // Ciclos for...of y for...in
 
-
 // for( variable of iterable ) {
 // //código...}
 // EI ciclo recorre todos los elementos de un
 // elemento iterable como un arreglo o una
 // cadena de texto
-  
-  
+
 // for( variable in objecto ) {
 // //código...}
 // EI ciclo recorre todas las propiedades de un objeto
@@ -260,9 +253,8 @@
 //   while (letra != '/');
 
 //   console.log(texto);
-  
 
-  //while
+//while
 
 // contador = 0;
 //   texto = '';
@@ -273,7 +265,6 @@
 //     texto += letra;
 //   }
 // console.log(texto)
-  
 
 // FUNCIONES 18/102
 
@@ -284,17 +275,17 @@
 //   return value(4)
 // }
 
-  // (1)Palabra reservada
-  // (2) Nombre único por el que se va a llamar a la función
-  // (3)Parámetros de entrada requeridos para que la función se ejecute correctamente. Son opcionales y separados por comas
-  // (4)Las funciones pueden o regresar un valor o resultado derivado del código y los argumentos
+// (1)Palabra reservada
+// (2) Nombre único por el que se va a llamar a la función
+// (3)Parámetros de entrada requeridos para que la función se ejecute correctamente. Son opcionales y separados por comas
+// (4)Las funciones pueden o regresar un valor o resultado derivado del código y los argumentos
 
 // Otra forma de definir una función(a través de una variable)
 
 // (1)Nombre de la función
 // function iniciarUI(1) (param1 ,param2) {
 // // código
-  
+
 // (2) Nombre de variable
 //   const iniciarUI(2) = function (param1, param2) {
 //     // código
@@ -370,7 +361,7 @@
 //   for (let i = 0; i < numeros.length; i++) {
 //     res += numeros[i]
 //   }
-  
+
 //   console.log('la suma es '+ res)
 //   }
 // suma( 2, 3, 1, 6, 5)
@@ -394,7 +385,6 @@
 // console.log(area("rectangulo", 10, 15));
 // console.log(area("triangulo", 5, 8));
 
-
 // function perimetro(...lados) {
 //   let poligono = 0;
 //   for (let i = 0; i < lados.length; i++) {
@@ -406,8 +396,6 @@
 // }
 
 // perimetro(2, 3, 5, 7, 8);
-
-
 
 // const suma = function (...numeros) {
 //   let suma = 0;
@@ -421,9 +409,7 @@
 //   return suma
 // }
 
-
 // console.log(`la suma es ${suma(2, 4, 5, 6)}`);
-
 
 // Funciones anónimas y funciones flecha (Teoría) 20/102
 
@@ -432,26 +418,21 @@
 // Funciones que no tienen nombre
 // Se pueden usar entre otras cosas para encapsular otras funciones
 
-
-
 // Funciones anónimas
 //   (function () {
 // // código
 //     });
 // Definición
-  
-  
+
 //   (function () {
 // // código
 //     })();
 // Ejecución
 
-
 // Funciones de flecha
 
 // Hay que definir una variable o una función anónima para crearlas
 // Buscan simplificar la sintaxis del código
-
 
 // funcion normal
 // function iniciarUI(param1, param2) {
@@ -468,7 +449,7 @@
 //   que enestos casos está implícito
 
 // Ejemplo:
-  
+
 // const saludo = nombre => 'Hola' + nombre
 
 // Funciones anónimas y funciones flecha (práctica) 21/102
@@ -477,18 +458,16 @@
 //   return valor * 274.15;
 // }
 
-
 // simplificar la sintaxis para convertirla en funcion flecha
 
 // const gradosCaK = valor => valor * 274.15;
- 
 
 //   // Funcion anonima
 
 //   (function (){
 //     console.log('funcion anónima');
 //   }) ();
-  
+
 // console.log(gradosCaK(20));
 
 // (() => {
@@ -499,9 +478,8 @@
 //   console.log(gradosCaK(1));
 // })();
 
-  
- // Generadores (teoria) 24/102
-  
+// Generadores (teoria) 24/102
+
 // function* secuencia(){
 // yield 1
 // yield 2
@@ -509,14 +487,12 @@
 // return 4
 // }
 
-
 // let generator = secuencia();
 // let uno = generator.next();
 // let dos = generator.next();
 
-
 // Generadores (practica) 25/102
- 
+
 // function *nombres(){
 //   yield 'Juan';
 //   yield 'Maria';
@@ -535,7 +511,6 @@
 // console.log(iterator.next().value);
 // console.log(iterator.next());
 
-
 // for (const itItem of iterator) {
 //   console.log(itItem);
 // }
@@ -548,7 +523,6 @@
 //   }
 // }
 
-
 // const it2 = numero();
 
 // console.log(it2.next());
@@ -558,9 +532,7 @@
 // console.log(it2.next());
 // console.log(it2.next());
 
-
 // Closure (teoría) 24/102
-
 
 // ejemplo 1
 
@@ -570,8 +542,7 @@
 // }
 // generarUI();
 
-
- // ejemplo 2
+// ejemplo 2
 
 // function generarUI(){
 // let panel = 'edicion';
@@ -586,7 +557,6 @@
 
 // ejemplo 3
 
-
 // function suma(n1){
 // return function(n2){
 // return n1+n2;
@@ -594,7 +564,6 @@
 // }
 // let res = suma (10);
 // console.log(res(5));
-
 
 // Clausuras (prácticas) 25/102
 
@@ -625,7 +594,6 @@
 // }
 
 // uno();
-
 
 // let nombre ='julio';
 
@@ -658,7 +626,7 @@
 
 // String (teoría) 28/102
 
-// text0.length; Conocer la longitud 
+// text0.length; Conocer la longitud
 // texto[7]=; Conocer un caracter en concreto. Basados en el índice
 // texto.indexOf(); Regresa el indice de la primera ocurrencia del texto a buscar
 // texto.lasIndexOf(); Regresa el indice de la última ocurrencia del texto a buscar
@@ -671,20 +639,17 @@
 // texto.trim(); elimina los espacios al principio y final del texto
 // texto.split(); Convierte una cadena de texto en arreglo definido por un separador
 
-
 // Arreglos (Teoría)
 
-
-
 // | 4 | 1 | 8 | 10 | 0 | 9 |    -> arreglo
-//   0   1   2    3   4   5      -> Indice 
+//   0   1   2    3   4   5      -> Indice
 
-//  let nombre = [4,1,8,10,0,9]; 
+//  let nombre = [4,1,8,10,0,9];
 //  // llamar a un valor del arreglo
 //  nombre[4]; //-> 0
 //  nombre[7] = 4;
 //  console.log(nombre);
- //-> [ 4, 1, 8, 10, 0, 9, <1 empty item>, 4 ]
+//-> [ 4, 1, 8, 10, 0, 9, <1 empty item>, 4 ]
 
 // Obtener número de elementos de un arreglo
 
@@ -701,16 +666,13 @@
 // nombres[3] = 'Lena';
 // nombres[4] = 'Ramiro';
 
-
 // listar todos los elementos
 
 // console.log(nombres);
 
-
 // nombres[10] = 'Marcos';
 
-
-// console.log(nombres, nombres[5]); 
+// console.log(nombres, nombres[5]);
 //-> (11) ['Juan', 'Maria', 'Sergio', 'Lena', 'Ramiro', vacío × 5, 'Marcos']
 
 // Otra forma de definir un arreglo
@@ -722,9 +684,9 @@
 // nombres[1] = 23;
 // calificaciones[2] = 'Juan';
 
- // console.log(nombres, calificaciones);
- // -> (6) [56, 77, 'Juan', 79, 99, 100]
- // console.log(nombres.length, calificaciones.length);
+// console.log(nombres, calificaciones);
+// -> (6) [56, 77, 'Juan', 79, 99, 100]
+// console.log(nombres.length, calificaciones.length);
 //-> 11 6
 
 // for(let i = 0; i < nombres.length; i++){
@@ -746,7 +708,6 @@
 // 79
 // 99
 // 100
-
 
 // Metodos clásicos de arreglos (teoría) 31/102
 
@@ -772,11 +733,9 @@
 // convertir una cadena en un arreglo
 // variable . split (params)
 
-
 // Metodos clásicos de arreglos (práctica) 32/102
 
 //  let coordenadas = [10.236, 14.334, 11.325, 15.234];
-
 
 //  // push para añadir elemento
 //  console.log('coordenadas', coordenadas);
@@ -788,7 +747,6 @@
 //  //indexOf para buscar el indice de un elemento
 //  const posicion = coordenadas.indexOf(14.334);
 
- 
 //  console.log('indexof', posicion, coordenadas[posicion]);
 //  // -> indexof 1 14.334
 
@@ -816,14 +774,13 @@
 // Devuelve un arreglo nuevo derivado del resultado de eliminar arreglos
 // anidados
 
-
 // Convertir arreglos anidados:
-// ||6|8||9|10||9|7|| 
-//    0    1     2    -> Indices   
+// ||6|8||9|10||9|7||
+//    0    1     2    -> Indices
 
 // en un solo arreglo:
 // |6|8|9|10|9|7|
-//  0 1 2  3 4 5       -> Indices 
+//  0 1 2  3 4 5       -> Indices
 
 // let calificaciones = [[6,8],[9,10],[9,7]];
 // let resultado = calificaciones.flat();
@@ -867,7 +824,7 @@
 //  8 5
 
 //con otro nombre de parametros
- 
+
 // calificaciones.forEach((a,b)=>console.log(a,b));
 //  10 0
 //  7 1
@@ -875,8 +832,6 @@
 //  6 3
 //  2 4
 //  8 5
-
-
 
 //segunda
 
@@ -918,11 +873,9 @@
 
 //Métodos de arreglos avanzados II(práctica) 35/102
 
-
 //Filter.
 
 //crea un nuevo array con todos los elementos que cumplan la condición implementada por la función dada.
-
 
 // const arregloFilter = calificaciones.filter(item => item < 5);
 // console.log(arregloFilter);
@@ -945,14 +898,12 @@
 //->[ 10, 7, 4, 6, 2, 8 ]
 //-> 10
 
-
 //FindIndex
 
 // const index = calificaciones.findIndex(item =>{
 //     return item === 6;
 // });
 // console.log(index);
-
 
 //Some
 
@@ -963,10 +914,8 @@
 // });
 // console.log(existe);
 
-
 //----------------------------------------
 //Métodos de arreglos avanzados III(práctica) 36/102
-
 
 //flat
 
@@ -1009,15 +958,12 @@
 
 // La diferencia principal de un mapa con un arreglo, es que en el primero nosotros tenemos que decidir el nombre con el que llamamos a los índices
 
-
 // arreglo
 // |1|8|10|0|9|3|
-//  0 1  2 3 4 5 
+//  0 1  2 3 4 5
 // map
 // |1  | 8   |  10  |0     | 9     |  3 |
 // Juan Maria Sergio paula  ernesto  lena
-
-
 
 // let calificaciones = new Map();
 // El método set nos permite ingresar el óndice y el valor. Primero escribimos el índice y separado con una coma el valor quecorresponde a ese índice
@@ -1043,13 +989,9 @@
 
 //calificaciones.clear("juan");
 
-
-
 // console.log(calificaciones);
 
-
 // Map (práctica) 37/102
-
 
 // const mapa = new Map();
 
@@ -1074,9 +1016,7 @@
 
 // Set (Teoria) 39/102
 
-
 // let calificaciones= new Set();
-
 
 // calificaciones.add(10);
 // calificaciones.add(8);
@@ -1124,7 +1064,6 @@
 // for(let item of iterador){
 //     console.log(item);
 // }
-
 
 // Strings (práctica) 41-42/102
 
@@ -1205,7 +1144,6 @@
 // console.log(mensajeError.split(' '));
 // console.log(mensajeError.split(''));
 
-
 // Objetos (teoría) 43/102
 
 // Los objetos tienen llaves, clave y valor
@@ -1275,7 +1213,6 @@
 // console.log(personajes[1]);
 // //-> { altura: 140, color_pelo: 'cafe', chaleco: { color: 'azul' } }
 
-
 // console.log(personajes[1].chaleco.color);
 // //-> azul
 
@@ -1344,14 +1281,13 @@
 //   cantar: function(){
 //     return "guau";
 //   }
-  
+
 //    };
 
 //    console.log(kk.cantar());
 //    //->guau
 
-
-   // Métodos de objetos (práctica) 46/102
+// Métodos de objetos (práctica) 46/102
 
 //    const usuario = {
 //     id: 5,
@@ -1383,7 +1319,6 @@
 // console.log(viaje02.tiempo());
 // //-> 0.6666666666666666
 
-
 // Como funciona this (teoría) 47/102
 
 // this.Hace referencia al objeto que lo contiene
@@ -1396,14 +1331,13 @@
 // mismo objeto, con el cual se puede
 // acceder a sus propiedades y métodos
 
-
 // let post={
 // likes: 160,
 // getLikes: function(){
 // return this.likes `likes`;
 // }
 // };
- 
+
 // console.log(post);
 
 // this en una función o en un contexto
@@ -1417,7 +1351,6 @@
 // this cuando se usa en eventos contiene al
 //  elemento HTML que activó el evento
 
-
 // button addEventListener("click", function(e)
 // {console. log(this);});
 
@@ -1427,14 +1360,13 @@
 // undefined
 // this por si solo en una función de flecha hace referencia al objeto Global
 
-// Como funciona this (práctica) 47/102
+// Como funciona this (práctica) 48/102
 
 // let edad = 10;
 // let nombre = 'John';
 
 // this.nombre = 'Jessica';
 // this.edad = 40;
-
 
 // const usuario = {
 //     id: 5,
@@ -1452,3 +1384,254 @@
 // console.log(usuario.saludo());
 // console.log(usuario.getEdad());
 // console.log(this);
+
+//Call, apply y bind (prácticas) 49/102
+
+// Estos tres métodos buscan poder asociar un objeto
+// a this
+
+// const user={
+//   name: 'Marcos'
+// };
+// const business ={
+// name: 'Headbook'
+// };
+// function showInfo( likes, friends){
+// return `${this.name} tiene ${likes} likes y ${friends} amigos`;
+// }
+
+// console.log(showInfo(10,5));
+// -> undefined tiene 10 likes y 5 amigos
+// No devuelve el name porque no sabe a cual de los dos objetos
+// debe aplicar la llamada
+
+// console.log(showInfo.call(business, 4, 8));
+// //-> Headbook tiene 4 likes y 8 amigos
+// console.log(showInfo.apply(user, [5, 9]));
+// // -> Marcos tiene 5 likes y 9 amigos
+
+// la diferencia entre call y apply es que la última
+//tenemos que escribir los parámetros como un array
+
+// bind lo que hace es lo mismo asociar el contexto pero regresar de una función
+// para poder ejecutarla
+
+// const newfunction = showInfo.bind(user);
+// console.log (newfunction(10,15));
+
+// Desestructuracion (Teoría) 50/102
+
+// Desestructuración
+// Forma de extraer las propiedades de un objeto y asignarlas a variables
+
+// Nos permite separar en variables las propiedades de un objeto
+
+// Desestructurar un objeto
+
+// let kk={
+// altura: 160,
+// color_pelo: "blanco"
+// };
+// let {altura, colorPelo}=kk;
+//             |
+//     Nombre de variables
+
+// Desestructurar un arreglo de objetos
+
+// let personajes=[
+// {
+//   altura: 150,
+// color_pelo: "amarillo",
+// chaleco: {
+// color: "verde"}
+// },
+// {
+// altura: 100,
+// color_pelo: "cafe",
+// chaleco: {
+// color: "azul"}
+// },
+// {
+// altura: 160,
+// color_pelo: "blanco",
+// chaleco: {
+// color: undefined
+// }
+// }
+
+// ]
+
+// let [isabelle, nook ,kk] = personajes;
+
+//   isabelle.altura;
+//   nook.color_pelo ;
+//   kk.chaleco.color;
+
+// console.log(isabelle.altura);
+// //-> 150
+// console.log(nook.color_pelo);
+// //-> cafe
+// console.log(kk.chaleco.color);
+// //-> undefined
+
+// Desestructuracion (prácticas) 51/102
+
+// const usuario = {
+//   id: 5,
+//   nombre: 'Sarah',
+//   edad: 38,
+//   habilidades: [
+//       {
+//           id: 0,
+//           nombreHabilidad: 'programacion'
+//       },
+//       {
+//           id: 1,
+//           nombreHabilidad: 'canto'
+//       }
+//   ]
+// };
+
+// const idUsuario = usuario.id;
+// const nombreUsuario = usuario.nombre;
+// const habilidad01 = usuario.habilidades[0].nombreHabilidad;
+
+// console.log(idUsuario, nombreUsuario, habilidad01);
+// //-> 5 Sarah programacion
+// const { id, nombre, habilidades} = usuario;
+// console.log(id, nombre, habilidades);
+// //  5 Sarah [
+// //   { id: 0, nombreHabilidad: 'programacion' },
+// //   { id: 1, nombreHabilidad: 'canto' }
+// // ]
+
+//  const {nombreHabilidad} = habilidades[0];
+//  console.log(nombreHabilidad);
+//  //-> programacion
+
+// -> 5 Sarah [
+//   { id: 0, nombreHabilidad: 'programacion' },
+//   { id: 1, nombreHabilidad: 'canto' }
+// ]
+
+// const elementos = [
+//   {id: 0, nombre: 'KK'},
+//   {id: 1, nombre: 'Canelita'},
+//   {id: 2, nombre: 'nook'}
+// ];
+
+// const [ kk, canelita, nook] = elementos;
+// console.log(kk, canelita, nook);
+// -> { id: 0, nombre: 'KK' } { id: 1, nombre: 'Canelita' } { id: 2, nombre: 'nook' }
+
+// // Introducción al DOM (Teoría) 52/102
+
+// // Podríamos decir que el DOM es la representación gráfica en forma de árbol de como está estructurad nuestra aplicación web (HTML)
+
+// // Podríamos representar el DOM  a través de este ejemplo
+
+// Document Object Model
+
+//    (1)                |main|
+//    (2)           |div|          |div|
+//    (3)           |img|          | a |
+//                                |texto|
+// // Cada uno de estos elementos lo vamos a llamar Nodo
+// // Pero un Elemento está vinculado a una etiqueta HTML. Por eso, texto dentro del hipervínculo sería un Nodo, pero no un Elemento
+
+// (1) Nodo padre
+// (2) Nodos hijos de main y padres de img y a. Ambos div son hermanos
+// (3) Nodos hijos de div y nietos de main
+
+// Vamos a tomar este ejemplo:
+
+// Hay dos métodos para hacer referencia a cada uno de estos elementos a través de JS
+
+// Método tradicional
+
+// getElementById("elemento") // por id
+// getElementByTagName("elemento") // por etiqueta
+// getElementByClassName("elemento") // por nombre
+
+// Método moderno
+
+// querySelector("elemento") // Se puede llamar a clases, id, etiqueta
+// querySelectorAll(".item") // Selecciona a todos los elementos que tengan clase .item
+
+// header.children  // Nos devuelve una colección de elementos, que se llama NodeList, que contiene todos sus hijos
+
+// logo.parentNode // Nos devuelve el padre del elemento
+// logo.nextElementSibling // nos devuelve elos hermanos de logo
+
+// Introducción al DOM (práctica) 53/102
+
+// const logo = document.getElementById('logo');
+// const logov2 = document.querySelector('#logo');
+
+// console.log(logo);
+// console.log(logov2);
+
+// const item = document.getElementsByClassName('item');
+// const itemv2 = document.querySelectorAll('.item');
+
+// console.log(item);
+// console.log(itemv2);
+
+// console.log(Array.isArray(item), Array.isArray(itemv2));
+// Array.isArray nos devuelve si item e itemv2 son arreglos
+// // El resultado es: false false
+
+// console.log(Reflect.has(item, 'forEach'), Reflect.has(itemv2, 'forEach'));
+// Reflect.has son permite validar si un objeto tiene un método específico
+// // Nos devuelve false true. Significa que item no puede ejecutar forEach, pero itemv2 si
+
+// console.log(Reflect.has(item, Symbol.iterator), Reflect.has(itemv2, Symbol.iterator));
+// Valida si una variable es un Iterador.
+// Devuelve true true
+
+// item.forEach(element => {
+//     console.log(element);
+// });
+
+// Aplicando for...of podemos iterar tanto item como itemv2
+
+// for(elemento of item){
+//     console.log(elemento);
+// }
+
+// for(elemento of itemv2){
+//   console.log(elemento);
+// }
+
+// De forma general vamos a estar utilizando querySelector tanto para obtener Id como para obtener Iteradores, porque se hace mucho más cómodo
+
+// const arregloItem = Array.from(item);
+// const arregloItemv2 = Array.from(itemv2);
+
+// console.log(arregloItem, arregloItemv2);
+
+// const links = document.getElementsByTagName('a');
+// const linksv2 = document.querySelectorAll('a');
+
+// console.log(links, linksv2);
+
+// Navegación por el DOM (prácticas) 54/102
+
+const header = document.querySelector("header");
+
+const hijosHeader = header.children;
+
+//hijos
+console.log(hijosHeader);
+console.log("hijos", header.children, header.childNodes);
+//-> HTMLCollection(2) [div#logo, ul, logo: div#logo] NodeList(5) [text, div#logo, text, ul, text]
+
+// //padre
+// console.log('padre', logo.parentElement, logo.parentNode);
+// //Nos devuelve el mismo HTML
+
+// // hermanos
+// console.log("hermanos", logo.parentElement.children, logo.nextElementSibling);
+// //parentElement.children sube al padre para obtener los hijos, nextElementSibling devuelve los hermanos sin contar el elemento inicial con el que estamos trabajando
+
+// DOM Modificar propiedades de elementos (Teoria) 55/102
