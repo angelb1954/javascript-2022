@@ -1,4 +1,9 @@
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
 //  https://www.youtube.com/playlist?list=PLYOJU3c8foCBA4244OpgdUAlMF14fEN7J
+
+
+
 
 // VARIABLES 6/102
 
@@ -96,6 +101,21 @@
 // // true
 
 // CONDICIONALES IF 9/102
+
+// if
+// Las if statements te permiten ejecutar una sección específica del código cuando una prueba es verdadera. El código dentro del paréntesis () es la prueba. Si la prueba es verdadera, entonces el código dentro del {} del bloque se ejecuta. Si la prueba no es verdadera, el código dentro del bloque no se ejecuta.
+
+// CÓDIGO DE EJEMPLO
+// var aNumber = 5;
+// if (aNumber === 5) {
+//     drawBox(blue);
+// }
+// if (aNumber === 4) {
+//     drawBox(red);
+// }
+// En este ejemplo, a la variable aNumber se le asigna el número 5. Hay dos if statements. La primera es comprobar si aNumber es igual a 5. La segunda es comprobar si es igual a 4. Solo la primera prueba de la if statement es verdadera, por lo que se dibujaría un cuadro azul.
+
+
 
 // let edad = 20;
 
@@ -292,6 +312,43 @@
 //   }
 
 // DEFINIR FUNCIONES 17/102
+
+// function() {}
+// Una función guarda un bloque de código. Puedes ejecutarla siempre que haga referencia al nombre de la función. El código dentro del {} del bloque se ejecutará cuando se llama el nombre de la función.
+
+// CÓDIGO DE EJEMPLO
+// function addSquare() {
+//     svg​.append('rect')​.attr('width',10)​.attr('height',10);
+// }
+// addSquare();
+// La palabra clave función le dice al código que quieres crear una función. La función addSquare creará un nuevo rectángulo SVG con un alto y ancho de 10. Para ejecutar el código dentro de la función, se debe llamar al nombre de la función: addSquare();
+
+// Parámetros
+// Un parámetro es un tipo especial de variable que se usa para especificar la entrada de una función.
+
+// Los parámetros se definen dentro del paréntesis () de una declaración de función, y se comportan como una variable dentro de una función. Solo existen dentro de la declaración de función.
+
+// CÓDIGO DE EJEMPLO
+// function sum(number1, number2) {
+//     return number1 + number2;
+// }
+
+// sum(4, 7);
+// En la declaración de función sum(), number1 y number2 son los parámetros. La función devuelve la suma de los 2 parámetros.
+
+// Cuando se llama a la función, los números que se pasan a ella se llaman argumentos. En este código de ejemplo, 4 y 7 son argumentos.
+
+// Bloque de código
+// Una secuencia de comandos agrupados dentro de llaves {}.
+
+// CÓDIGO DE EJEMPLO
+// if (learningToCode === 'fun') {
+//     print('Coding is awesome!');
+//     print('I want to solve more puzzles!');
+// }
+// Si la variable learningToCode es igual a 'fun', entonces se ejecutará el código dentro del bloque de código {}.
+
+
 
 // function suma(){
 //     console.log("inicia función");
@@ -1565,6 +1622,8 @@
 
 // Introducción al DOM (práctica) 53/102
 
+
+
 // const logo = document.getElementById('logo');
 // const logov2 = document.querySelector('#logo');
 
@@ -1578,22 +1637,22 @@
 // console.log(itemv2);
 
 // console.log(Array.isArray(item), Array.isArray(itemv2));
-// Array.isArray nos devuelve si item e itemv2 son arreglos
+// // Array.isArray nos devuelve si item e itemv2 son arreglos
 // // El resultado es: false false
 
 // console.log(Reflect.has(item, 'forEach'), Reflect.has(itemv2, 'forEach'));
-// Reflect.has son permite validar si un objeto tiene un método específico
+// // Reflect.has son permite validar si un objeto tiene un método específico
 // // Nos devuelve false true. Significa que item no puede ejecutar forEach, pero itemv2 si
 
 // console.log(Reflect.has(item, Symbol.iterator), Reflect.has(itemv2, Symbol.iterator));
-// Valida si una variable es un Iterador.
-// Devuelve true true
+// // Valida si una variable es un Iterador.
+// // Devuelve true true
 
 // item.forEach(element => {
 //     console.log(element);
 // });
 
-// Aplicando for...of podemos iterar tanto item como itemv2
+// // Aplicando for...of podemos iterar tanto item como itemv2
 
 // for(elemento of item){
 //     console.log(elemento);
@@ -1617,14 +1676,14 @@
 
 // Navegación por el DOM (prácticas) 54/102
 
-const header = document.querySelector("header");
+// const header = document.querySelector("header");
 
-const hijosHeader = header.children;
+// const hijosHeader = header.children;
 
-//hijos
-console.log(hijosHeader);
-console.log("hijos", header.children, header.childNodes);
-//-> HTMLCollection(2) [div#logo, ul, logo: div#logo] NodeList(5) [text, div#logo, text, ul, text]
+// //hijos
+// console.log(hijosHeader);
+// console.log("hijos", header.children, header.childNodes);
+// //-> HTMLCollection(2) [div#logo, ul, logo: div#logo] NodeList(5) [text, div#logo, text, ul, text]
 
 // //padre
 // console.log('padre', logo.parentElement, logo.parentNode);
@@ -1635,3 +1694,943 @@ console.log("hijos", header.children, header.childNodes);
 // //parentElement.children sube al padre para obtener los hijos, nextElementSibling devuelve los hermanos sin contar el elemento inicial con el que estamos trabajando
 
 // DOM Modificar propiedades de elementos (Teoria) 55/102
+
+
+
+// const imagen = document.querySelector("#portada");
+
+// // Con el método setAttribute  podemos modificar sus propiedades. Tambien podemos hacerlo llamando a imagen.width
+
+// imagen.setAttribute("width", "200"); 
+// imagen.width = "200";
+
+// // Para acceder a la propiedad de un objeto, podemos usar también dos propiedades
+// imagen.width;
+// imagen.getAttribute("height");
+
+// // Obtener el texto que contiene un elemento HTML
+
+
+// const button= document.querySelector("#boton")
+
+// // Para cambiar el texto
+// imagen.textContent = "nuevo texto"
+
+// // Para ver el contenido del texto
+
+// imagen.textContent;
+
+
+// DOM Modificar propiedades de elementos (práctica) 56/102
+
+// const foto = document.querySelector("#foto");
+
+// console.log(foto.width, foto.getAttribute("width"));
+// console.table([
+//   {
+//     medida: foto.width,
+//     tipo: typeof foto.width,
+//   },
+//   {
+//     medida: foto.getAttribute("width"),
+//     tipo: typeof foto.getAttribute("width"),
+//   },
+// ]);
+
+// foto.width = 500;
+// // foto.setAttribute("width", "100%");
+
+ // const boton = document.querySelector("#boton");
+
+// boton.textContent = "Monarquía bananera";
+// boton.setAttribute ('class', 'boton-principal');
+// console.log(foto);
+
+// DOM Modificar estilos de elementos (Teoria) 57/102
+
+// También podemos modificar los estilos de nuestro HTML queson parte del DOM
+
+// Mi botón
+
+// boton.style.backgroundColor= "blue";
+// //modifica el color de fondo del botón
+
+// boton.style.color = "white";
+// //modifica el color del texto
+
+// boton.style.paddingLeft = "40";
+// // Modifica la alineación del texto dentro del botón
+
+// boton.Style.backgroundlmage = "url(imagen.jpg)";
+// // modifica la imagen de fondo del botón
+
+// Modificar clases
+
+// // Este div contiene tres class. Podemos materializar estas clases como si fueran un conjunto
+
+// <div id="capa" class="container bg—red fs-14">
+//  |container| bg-red | fs-14 |
+
+//    capa. classList.remove("un-estilo") ;
+//    // Elimina un estilo
+
+//   capa.classList.replace("container", "estilo—nuevo") ; 
+// // Nos permite cambiar un estilo por otro nuevo
+// |estilo-nuevo| bg-red | fs-14 |
+
+// capa.classList.toggle("panel") ;
+// //Nos permite comprobar si un estilo ya existe y si no, lo añade
+// |estilo-nuevo| bg-red | fs-14 |panel |
+
+// capa.classList.contains ("fs-14");
+// //Nos devuelve true si el nombre de clase existe y false en caso contrario
+
+// Modificar estilos de elementos (práctica) 58/102
+
+// const boton = document.querySelector('#boton');
+
+// boton.style.backgroundColor = 'blue';
+// boton.style.color = '#fff';
+// boton.style.paddingLeft = '50px';
+// boton.style.paddingTop = '50px';
+// boton.style.background = 'linear-gradient(270deg, rgba(45,90,83,1) 0%, rgba(98,193,178,1) 100%)';
+
+//  const boton02 = document.querySelector('#boton02');
+
+ 
+
+// boton02.classList.add("boton");
+// boton02.classList.add('boton-estilo01');
+// boton02.classList.remove('boton');
+// boton02.classList.toggle('boton-estilo02');
+
+// console.log(boton02.classList);
+// console.log(boton02.classList.contains('boton-estilo01'));
+
+// DOM Crear y eliminar elementos (Teoría) 59/102
+
+    //         DOM
+       
+    //         main
+    // | ---------------------       
+    // | div |           | div |      | Crear elemento|
+    // | img |           | a   |      -----------------
+    // |     |           |texto|           |section|
+
+  // Crear elementos HTML
+
+//   // Creamos el elemento
+//   const elemento = document.createElement ("section") ;
+//   // Lo adjuntamos al DOM. 
+//   // Creamos una id
+//   elemento.setAttribute("id", "nuevoElemento");
+//   // Hacemos referencia al padre creando una constante
+//    const main = document.querySelector("main");
+// // con append lo incluimos al final de los elementos hijos de main.Nos permite crear tanto elementos como nodos de texto
+// main.append(elemento);
+// //si queremos incluirlo al principio
+
+// main.prepend(elemento);
+// //Hay un tercer método que unicamente nos permite crear  elementos HTML 
+// main.appendChild(elemento);
+// // Con append  no hace falta crear un nuevo elemento o un nuevo nodo de texto. Con appendChild hay que definir explicitamente que quemos un nuevo nodo de texto
+
+// // Varios elementos a la vez
+// //Varios elementos a la vez con append
+
+
+// const title= document.createElement("h1");
+// const photo = document.createElement("img") ;
+// const link= document.createElement( "a" )
+
+// const container = document.createElement("#container") ;
+
+// container.append(title, photo, link, "welcome");
+
+// //Varios elementos a la vez con appendChild
+ 
+// const container =document.createElement("#container");
+
+// const text = document.createTextNode("welcome") ;
+// const title= document.createElement("h1");
+// const photo = document.createElement("img") ;
+// const link= document.createElement( "a" )
+
+
+// container.appendChild (title) ;
+// container.appendChild(photo) ;
+// container. appendChild(link) ;
+// container. appendChild (text) ;
+
+// Eliminar elementos
+
+
+
+//             main
+// -------------------------------------            
+// |div#photo |               |div#links|            
+// |img       |               |   a     |
+//                            |  texto  |   
+  
+// Eliminar elementos completos
+
+// links.remove();
+
+// //Si eliminamos la capa links, tambien quedan eliminados los hijos a y texto
+
+// // Si por ejemplo queremos eliminar el hipervínculo (a), podemos hacer uso de removeChild
+
+// links.removeChild(links.ChildNodes[0]);
+//                         (1)
+
+// (1) objeto a eliminar
+
+
+// DOM Crear elementos HTML (prácticas) 60/102
+
+// const body = document.querySelector("body");
+// const container = document.createElement("div");
+// container.id = "mainContainer";
+// container.style.backgroundColor = "#003366";
+// container.style.color = "white";
+// container.style["padding"] = "50px";
+// container.textContent = "Bienvenidos al curso";
+
+// body.appendChild(container);
+
+// const texto = document.createTextNode(" de Javascript");
+// container.append(texto);
+// //append nos permite agregar un numero ilimitado de elementos y además poder incluir texto directamente, al contrario que con appendChild
+// console.log(container.textContent);
+
+// const link = document.createElement("a");
+// link.setAttribute("href", "http://www.google.com");
+// link.textContent = "Ir a Google";
+
+// container.prepend(link, " ");
+
+// // DOM eliminar elementos en HTML (prácticas) 61/102
+
+// //Tomamos como referencia el ejercicio del capitulo anterior
+
+// const html = `
+// <div class="container">
+//         <ul id="lista">
+//             <li id="item-home">
+//                 <a href="#" id="link-home">Home</a>
+//             </li>
+//             <li>
+//                 <a href="#">Services</a>
+//             </li>
+//             <li>
+//                 <a href="#">Contact</a>
+//             </li>
+//         </ul>
+//     </div>
+// `;
+
+// document.querySelector("body").innerHTML = html;
+
+// const lista = document.querySelector("#lista");
+// const itemHome = document.querySelector("#item-home");
+// const linkHome = document.querySelector("#link-home");
+
+// //linkHome.remove();
+// //itemHome.remove();
+// lista.removeChild(itemHome);
+
+
+// DOM Eventos (Teoría) 62/102
+
+// Es la forma en que podemos interactuar con el usuario a través de alguna acción realizada por el mismo.
+
+// Ejemplos de eventos
+
+// // • Cuando la página web termina de cargar
+// // • Al hacer scroll
+// // • Cuando el contenido de un campo de texto cambia
+// // • Cuando se da clic en un botón
+// // • Cuando se presionan las teclas de teclado
+
+// // Se pueden escribir de dos formas. La primera a través de HTML aunque no es muy recomendada
+
+// <button onclick(1) = "saludo()(2); "> Presiona aquí </button>
+// (1) Evento declarado en el elemento 
+// (2) Función Javascript a llamar
+
+// // La segunda forma es a través de addEventListener, que es la recomendada
+
+// boton.addEventListener(1)("click"(2), function(e){}(3));
+// (1) permite definir un nuevo evento al elemento
+// (2) nombre del evento
+// (3) función a ejecutar, puede ser anónima o definida
+
+
+
+// // ¿Cuantos eventos hay?
+
+// Offline
+// Onabort
+// onafterprint
+// onbeforeonload
+// onbeforeprint
+// onblur
+// oncanplay
+// oncanplaythrough
+// onchange
+// oncltck
+// oncontextmenu
+// ondblclick
+// ondrag
+// ondragend
+// ondragenter
+// ondragleave
+// ondragover
+// ondragstart
+// ondrop
+// ondurationchange
+// onemptied
+// onended
+// onerror
+// onfocus
+// onformchange
+// onforminput
+// onhaschange
+// oninput
+// oninvalid
+// onkeydown
+// onkeypress
+// onkeyup
+// onload
+// onloadeddata
+// onloadedmetad
+// ata
+// onloadstart
+// onmessage
+// onmousedown
+// onmousemove
+// onmouseout
+// onmouseover
+// onmouseup
+// onmousewheel
+// onoffline
+// onoine
+// ononline
+// onpagehide
+// onpageshow
+// onpause
+// onplay
+// onplaying
+// onpopstate
+// onprogress
+// onratechange
+// onreadystatechange
+// onredo
+// onresize
+// onscroll
+// onseeked
+// onseeking
+// onselect
+// onstalled
+// onstoraae
+// onsubmit
+// onsuspend
+// ontimeupdate
+// onundo
+// onunload
+// onvolumech,
+// onwaiti
+
+//DOM eventos (práctica) 63/102
+
+// function mostrarMensaje(){
+//     console.log('Este es un evento en línea');
+// }
+
+// mostrarMensaje();
+
+
+//  const boton = document.querySelector('#boton');
+
+//  let contador = 0;
+
+//   boton.addEventListener('click', function(e){
+//     console.log(e); 
+//     contador++;
+    
+  
+
+//      e.target.textContent = `${contador} clicks`;
+//   });
+
+    // document.querySelector('#respuesta').textContent = 'Texto dinamico desde un boton';
+    // contador++;
+    // e.target.textContent = `${contador} clicks`;
+
+    // document.querySelector('#capa').classList.toggle('ocultar');
+
+
+// document.querySelector('body').addEventListener('mousemove', e =>{
+//     document.querySelector('#respuesta').textContent =`${e.pageX} - ${e.pageY}`;
+//   });
+
+// const edificio = document.querySelector('#edificio');
+// let pegado = false;
+// window.addEventListener('mousemove', e =>{
+//     if(pegado){
+//         const x = e.pageX - (edificio.width / 2);
+//         const y = e.pageY - (edificio.height / 2);
+//         edificio.style.position = "absolute";
+//         edificio.style['left'] = x + 'px';
+//         edificio.style['top'] = y + 'px';
+//     }
+// });
+
+// edificio.addEventListener('click', e =>{
+//     pegado = !pegado;
+// });
+
+// DOM Formularios (Teoria) 64/102
+
+// los formularios son una parte importante
+// porque prácticamente a partir de formularios es que creamos aquellas secciones en donde el usuario tiene la interactividad es decir a partir de los formularios es que por ejemplo los usuarios pueden utilizar campos de texto para ingresar contenido. Pueden utilizar botones check boxes radio bottons listas para seleccionar opciones etcétera entonces una parte importante de los eventos en el domes conocer cómo manipular los elementos que están específicamente creados para la interacción con el usuario. Vamos a ver cómo manipular estos cuatro elementos:
+
+// <input>
+// <select>
+// < textarea>
+// <button>
+
+// Realmente si nosotros empezamos a agrupar la funcionalidad vemos que tenemos los inputs, el texto, el password, el ,  el radio botón y el submit todos funcionan de la misma forma, el comportamiento es exactamente el mismo por ejemplo.
+
+// Text y textarea
+// -------------
+// |Hola        |
+// -------------
+// campo.value = Hola
+
+
+
+
+// Si tenemos un texto o un textarea podemos hacer referencia a su valor a través de la propiedad value (campo punto value) y eso nos va a regresar lo que
+// tiene ese campo de texto lo que haya ingresado el usuario o podemos también hacer referencia y agregarle contenido
+// Dinámico. Por ejemplo value es igual a curso de avascript Y eso va a aparecer en el elemento.
+
+// Checkbox
+// --------- ----
+// |CAMPO   |    |
+// --------- ---- 
+// campo.checked = false
+
+// Los checkbox tienen la propiedad check el cual me va a regresar falso o verdadero si el check Box está activado o no por ejemplo aquí me diría que es falso pero cuando le doy clic y se activa me va a regresar que es verdadero.
+
+// Checkbox
+// name= "country"
+
+// | X|China|
+// |  |Italia|
+// |  |México|
+// | X|India|
+
+// const checkboxes= document.querySelectorAll("input[name='country']:checked");
+
+
+// Qué pasa con la colección de checkbox Por ejemplo si yo tengo una colección de checkbox en las que quiero marcar los países seleccionados yo voy a hacer referencia a través de document.querySelectorAll pero siempre teniendo como referencia que checkbox deben de tener el mismo nombre el mismo nombre pero el valor diferente entonces voy a hacer referencia con este selector que es input y luego entre corchetes así como lo hacemos en css names igual a Contry 2 puntos check  e nodos los cuales ya vimos Cómo manejar para poder extraer cada uno de los valores y eso pues ya empezar a manejarlos con la lógica que nosotros necesitemos aplicar. Por ejemplo podemos aplicar un forEach y para cada checkbox imprimir el valor checkbox punto value aquí seguimos utilizando la propiedad
+// value Porque como les decía para estos inputs el value me va a regresar el valor que contiene el elemento.
+
+// checkboxes.forEach(checkbox =>{console.log (checkbox . value);
+
+// De la misma forma funcionan los radiobottons tienen la propiedad check la cual me va a regresar falso si no está activado verdadero si está activado de la misma forma también cuando tenemos un conjunto de check boxes con el mismo nombre en este caso country volvemos a hacer el
+// mismo procedimiento cuánticator all input name country 2 puntos check fíjense que es exactamente lo mismo que
+// utilicemos check boxes O radiobots solamente que la funcionalidad del radio botón hace que no se seleccione más de uno sino solamente uno dentro del conjunto después puedo aplicar el mismo forEach para hacer una iteración o un recorrido y mostrar el valor de cada uno de los
+// elementos.
+
+
+// Con los botones cuando yo defino input type botón o submit puedo obtener el valor de Ese botón con un
+// campo punto value o puedo asignarle un valor enviar.
+// Cuando pasamos a las listas o al Select igual tenemos el campo punto value el cual me va a regresar el elemento o el valor del elemento seleccionado.
+
+// campo.options= [Manzana, Pera, Naranja]
+// //Nos regresa un arreglo con los elementos que tiene esa lista.
+
+// const opcion= document.createElement("option");
+// opcion.text = "Duranzo"
+// campo.add(opcion);
+// //Nos permite añadir un nuevo elemento a la lista
+
+// campo.remove(1);
+// //Podemos eliminar un elemento, usando el índice para llamarlo
+
+// DOM Formularios input text, checkbox, radio, select (práctica) 65-68/102
+
+// let respuestas = {
+//     nombre: '',
+//     lenguajes: [],
+//     nivel: '',
+//     pais: ''
+// };
+
+// const boton = document.querySelector('#boton');
+
+// boton.addEventListener('click', e =>{
+//     e.preventDefault();
+//     console.log(respuestas);
+//     const respuesta = document.querySelector('#respuesta');
+//      respuesta.innerHTML = '';
+//      for(prop in respuestas){
+//          respuesta.innerHTML += `${prop}: ${respuestas[prop]}<br/>`;
+//      }
+// });
+
+// // //input
+
+//  const nombre = document.querySelector('#nombre');
+//  nombre.addEventListener('input', e =>{
+//      respuestas.nombre = nombre.value;
+//  });
+
+
+// const lenguajes = document.querySelectorAll('input[type=checkbox]');
+// lenguajes.forEach(lenguaje =>{
+//     lenguaje.addEventListener('click', e =>{
+//         getLenguajes();
+//     });
+// });
+
+// //checked
+
+// function getLenguajes(){
+//     respuestas.lenguajes = [];
+//     const items = document.querySelectorAll('input[type=checkbox]:checked');
+//     items.forEach(item =>{
+//         respuestas.lenguajes.push(item.value);
+//     }); 
+// }
+
+
+// // //radios
+
+// const niveles = document.querySelectorAll('input[type=radio]');
+// niveles.forEach(nivel =>{
+//     nivel.addEventListener('click', e =>{
+//         respuestas.nivel = e.target.value;
+//     });
+// });
+
+// //select
+
+// const pais = document.querySelector('#pais');
+// pais.addEventListener('change', e =>{
+//     respuestas.pais = e.target.value;
+// });
+
+// //select añadir
+
+// const bPais = document.querySelector('#bPais');
+// bPais.addEventListener('click', e => {
+//     e.preventDefault();
+//     const texto = document.querySelector('#itPais').value;
+//     const option = document.createElement('option');
+//     option.value = texto;
+//     option.text = texto;
+//     pais.add(option);
+// });
+
+// DOM Slider de imágenes 69/102
+
+// const bPrev = document.querySelector("#bPrev");
+// const bNext = document.querySelector("#bNext");
+// const items = document.querySelectorAll("#slider-container .item");
+//  let index = 0;
+//  const total = items.length - 1;
+
+//  showItem(index);
+// // console.log(items);
+// bPrev.addEventListener("click", (e) => {
+//    if (index > 0) {
+//      index--;
+//      hideItems();
+//      showItem(index);
+//    }
+//   // console.log('anterior');
+// });
+
+// bNext.addEventListener("click", (e) => {
+//    if (index < total-1) {
+//      index++;
+//      hideItems();
+//      showItem(index);
+//    }
+//   // console.log('siguiente');
+// });
+
+//  function showItem(index) {
+//    items[index].classList.add("item-active");
+//  }
+
+//  function hideItems() {
+//    items.forEach((item) => {
+//      item.classList.remove("item-active");
+//    });
+//  }
+
+// Ejercicios. acordeón  70/102
+
+//  const items = document.querySelectorAll(".acordeon .item .header button");
+
+//  items.forEach((item) => {
+//    item.addEventListener("click", (e) => {
+//      const content = e.target.parentElement.nextElementSibling;
+//      content.classList.toggle("show");
+//    });
+//  });
+
+ // Ejercicios. calculadora 71/102
+
+//  const buttons = [
+//                     ['C', '^', '%', '/'],
+//                     ['7', '8', '9', '*'],
+//                     ['4', '5', '6', '-'],
+//                     ['1', '2', '3', '+'],
+//                     ['+/-', '0', '.', '='],
+//                 ];
+// let calculo = {
+//     operacion: '',
+//     memoria: undefined,
+//     numero: 0,
+//     resuelto: false,
+//     agregarDigito: function(n){
+//          if(this.resuelto){
+//              this.resuelto = false;
+//              this.numero = parseFloat(''.concat(n));
+//          }else{
+//              this.numero = parseFloat(''.concat(this.numero, n));
+//          }
+        
+//      },
+//     agregarOperacion: function(op){
+//          const {memoria, numero, operacion } = this;
+
+//          if(numero == 0 && memoria == undefined) return false;
+//          if(operacion == ''){
+//              this.operacion = op;
+//              this.memoria = this.numero;
+//              this.numero = 0;
+//           }else{
+//               this.numero = this.resolver();
+//               this.resuelto = true;
+//           }
+//          console.log(this);
+//      },
+//     agregarFuncion: function(op){
+//          switch(op){
+//              case '=':
+//                  const res = this.resolver();
+//                this.agregarFuncion('C');
+//                  this.numero = res;
+//              break;
+//              case 'C':
+//                  this.numero = 0;
+//                  this.operacion = '';
+//                  this.memoria = undefined;
+//                  this.resuelto = true;
+//              break;
+//            case '.':
+//                  if(!esFlotante(this.numero)){
+//                      console.log('no es flotante');
+//                      this.numero = this.numero + '.';
+//                  }else{
+//                      this.numero = this.numero.toString().replace('.','');
+//                  }
+//              break;
+//          }
+//          // console.log(this);
+//      },
+//     resolver: function(){
+        
+//          switch(this.operacion){
+//              case '+': return this.suma();
+//              case '-': return this.resta();
+//              case '*': return this.multiplicacion();
+//              case '/': return this.division();
+//              case '%': return this.porcentaje();
+//              case '^': return this.exponente();
+//              default:
+//                  console.log('no identificado');
+//          }
+//      },
+//     render: function(elemento){
+//          elemento.textContent = this.numero;
+//      },
+//     suma: function(){
+//          return this.numero += this.memoria;
+//      },
+//     resta: function(){
+//          return this.memoria -= this.numero;
+//      },
+//     multiplicacion: function(){
+//          return this.numero *= this.memoria;
+//      },
+//     division: function(){
+//          return this.numero /= this.memoria;
+//      },
+//     porcentaje: function(){
+//          return this.numero %= this.memoria;
+//      },
+//     exponente: function(){
+//          return this.numero **= this.memoria;
+//      }
+// };
+
+
+// const display = $('#display');
+// const botonesContainer = $('#botones-container');
+
+// for(fila of buttons){
+//     for(celda of fila){
+//         const boton = document.createElement('button');
+//         boton.textContent = celda;
+//         boton.addEventListener('click', e => {
+//             const caracter = e.target.textContent;
+            
+//             if(esNumero(caracter)){
+//                 calculo.agregarDigito(caracter);
+//             }else if(esFuncion(caracter)){
+//                 calculo.agregarFuncion(caracter);
+//             }else{
+//                 calculo.agregarOperacion(caracter);
+//             }
+//             calculo.render(display);
+//         });
+//         botonesContainer.appendChild(boton);
+//     }
+// }
+
+
+// function esNumero(n){
+//     return !isNaN(n);
+// }
+
+// function esFlotante(n){
+//     if(n.toString().indexOf('.') > -1){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+
+// function esFuncion(valor){
+//     const funciones = ['C', '=', '.', '+/-'];
+
+//     return funciones.some( (funcion, index) => funcion == valor);
+// }
+
+
+// function $(selector){
+//     return document.querySelector(selector);
+// }
+
+// function $$(selector){
+//     return document.querySelectorAll(selector);
+// }
+
+// Componente de pestañas 72/102
+
+// Primero hacemos referencia a los elementos HTML que vamos a necesitar en nuestro código
+
+
+// const tabs = document.querySelectorAll(".tab");
+// const contents = document.querySelectorAll(".content");
+
+// let index = 0;
+
+// cambiarTab(index);
+
+// tabs.forEach((tab, i) => {
+//   tab.addEventListener("click", (e) => {
+//     index = i;
+
+//     cambiarTab(index);
+//   });
+// });
+
+// function cambiarTab(index) {
+//   contents.forEach((content, i) => {
+//     content.style.display = "none";
+//   });
+//   tabs.forEach((tab, i) => {
+//     tab.classList.remove("active-tab");
+//   });
+//   tabs[index].classList.add("active-tab");
+//   contents[index].style.display = "block";
+// }
+
+// Ejercicios. Buscador de sugerencias 73/103
+
+// const db = [
+//   "luis",
+//   "maria",
+//   "sergio",
+//   "josue",
+//   "lena",
+//   "marcos",
+//   "omar",
+//   "enrique",
+// ];
+
+// const buscador = $("#buscador");
+// const sugerencias = $("#sugerencias");
+
+// buscador.addEventListener("input", (e) => {
+//   const q = e.target.value.toLowerCase().trim();
+
+//   if (q == "") mostrarSugerencias([], q);
+
+//   const res = db.filter((item) => {
+//     if (item.indexOf(q) > -1) return item;
+//   });
+
+//   mostrarSugerencias(res, q);
+// });
+
+// function mostrarSugerencias(valores, q) {
+//   sugerencias.innerHTML = "";
+//   if (q == "") {
+//     console.log("sd");
+//     sugerencias.style.display = "none";
+//     return false;
+//   } else {
+//     sugerencias.style.display = "block";
+//   }
+
+//   valores.forEach((item) => {
+//     const elemento = document.createElement("a");
+//     let texto = item.replace(q, `<strong>${q}</strong>`);
+//     elemento.innerHTML = texto;
+//     elemento.href = "#";
+//     sugerencias.appendChild(elemento);
+
+//     elemento.addEventListener("click", (e) => {
+//       buscador.value = e.target.textContent;
+//       sugerencias.innerHTML = "";
+//       sugerencias.style.display = "none";
+//     });
+//   });
+// }
+
+// function $(selector) {
+//   return document.querySelector(selector);
+// }
+// function $$(selector) {
+//   return document.querySelectorAll(selector);
+// }
+
+//  Ejercicios. Temporizador 74/102
+
+
+const tiempo = {
+  segundos: {
+    valor: 0,
+    limite: 59,
+  },
+  minutos: {
+    valor: 0,
+    limite: 59,
+  },
+  horas: {
+    valor: 0,
+    limite: 23,
+  },
+};
+
+const botonesAumentar = document.querySelectorAll(".bAumentar");
+const botonesDisminuir = document.querySelectorAll(".bDisminuir");
+const bIniciar = document.querySelector("#bIniciar");
+const bDetener = document.querySelector("#bDetener");
+const bReiniciar = document.querySelector("#bReiniciar");
+
+let contador;
+
+botonesAumentar.forEach((botonAumentar) => {
+  botonAumentar.addEventListener("click", (e) => {
+    //console.log(e.target.getAttribute('data-unidad'));
+    const unidad = e.target.getAttribute("data-unidad");
+    incrementar(unidad);
+    //console.log(tiempo);
+  });
+});
+
+botonesDisminuir.forEach((botonesDisminuir) => {
+  botonesDisminuir.addEventListener("click", (e) => {
+    //console.log(e.target.getAttribute('data-unidad'));
+    const unidad = e.target.getAttribute("data-unidad");
+    disminuir(unidad);
+    //console.log(tiempo);
+  });
+});
+
+bIniciar.addEventListener("click", iniciarCuenta);
+bDetener.addEventListener("click", detenerCuenta);
+bReiniciar.addEventListener("click", (e) => {
+  detenerCuenta();
+  tiempo.segundos.valor = 0;
+  tiempo.minutos.valor = 0;
+  tiempo.horas.valor = 0;
+  pintarInterfaz();
+});
+
+function incrementar(unidad) {
+  if (tiempo[unidad].valor + 1 <= tiempo[unidad].limite) {
+    tiempo[unidad].valor++;
+  }
+
+  pintarInterfaz();
+}
+
+function disminuir(unidad) {
+  if (tiempo[unidad].valor - 1 >= 0) {
+    tiempo[unidad].valor--;
+  }
+
+  pintarInterfaz();
+}
+
+function pintarInterfaz() {
+  const horas = document.querySelector("#horas .numero");
+  const minutos = document.querySelector("#minutos .numero");
+  const segundos = document.querySelector("#segundos .numero");
+
+  horas.textContent = `0${tiempo.horas.valor}`.slice(-2);
+  minutos.textContent = `0${tiempo.minutos.valor}`.slice(-2);
+  segundos.textContent = `0${tiempo.segundos.valor}`.slice(-2);
+}
+
+function iniciarCuenta() {
+  contador = setInterval(() => {
+    const { horas, minutos, segundos } = tiempo;
+
+    if (horas.valor === 0 && minutos.valor === 0 && segundos.valor === 0) {
+      detenerCuenta();
+    } else if (segundos.valor === 0) {
+      if (minutos.valor === 0) {
+        if (horas.valor === 0) {
+          //nada
+        } else {
+          tiempo.minutos.valor = tiempo.minutos.limite;
+          tiempo.segundos.valor = tiempo.segundos.limite;
+          disminuir("horas");
+        }
+      } else {
+        tiempo.segundos.valor = tiempo.segundos.limite;
+        disminuir("minutos");
+      }
+    } else {
+      disminuir("segundos");
+    }
+  }, 1000);
+}
+
+function detenerCuenta() {
+  console.log("fin");
+  clearInterval(contador);
+}
+

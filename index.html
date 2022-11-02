@@ -5,26 +5,406 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>javascript 2022</title>
+
+  <style>
+    /* body {
+      text-align: center;
+      font-size: 48px;
+    }
+  
+    button {
+      font-size: 40px;
+    }
+  
+    .ocultar {
+      display: none;
+    } */
+
+    /* Slider de imágenes 69/102 */
+ /* #slider-container{
+            width: 1400px;
+        }
+        #slider-container #buttons-container{
+            text-align: center;
+        }
+        
+         .item{
+            display: none;
+        } 
+
+        #slider-container .item-active{
+            display: block;
+        } */
+
+/* Acordeón de contenido 70/102 */
+
+/* .acordeon{
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        .acordeon .item{
+            display: block;
+        }
+
+        .acordeon .item .header button{
+            display: block;
+            width: 100%;
+            padding: 20px;
+        }
+        .acordeon .item .content{
+            transition: height 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            overflow: hidden;
+            height: 0;
+        }
+
+        .acordeon .item .content.show{
+            height: 150px;
+        } */
+
+
+
+ /* Calculadora 71/102 */
+
+/* body{font-family: Arial, Helvetica, sans-serif;}
+        #calculadora{
+            width: 500px;
+            margin: 100px auto;
+        }
+        #calculadora #botones-container{
+            display: grid;
+            grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+        }
+
+        #calculadora button{
+            padding: 14px 5px;
+        }
+        #calculadora #display{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: right;
+            font-size: 48px;
+        } */
+
+/* 72/102 Pestañas */
+
+/* body{font-family: Arial, Helvetica, sans-serif;}
+        
+        #tabs-container{
+            width: 500px;
+            margin: 100px auto;
+            border: solid 1px black;
+        }
+        #tabs-container .tabs{
+            display: flex;
+            background-color: #ccc;
+        }
+        #tabs-container .tabs .tab,
+        #tabs-container .tabs .tab button{
+            width: 100%;
+            
+        }
+
+        #tabs-container .tabs .tab button{
+            background-color: transparent;
+            border: none;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+
+        #tabs-container .tabs-containers .content{
+            display: none;
+        }
+
+        #tabs-container .tabs .tab.active-tab{
+            background-color: white !important;
+        }
+
+   */
+
+
+
+
+ /* Buscador con sugerencias 73/102  */
+
+ /* body{font-family: Arial, Helvetica, sans-serif;}
+        
+        #buscador-container{
+            width: 500px;
+            margin: 100px auto;
+        }
+        #buscador{
+            font-size: 28px;
+            padding: 10px 15px;
+        }
+        #sugerencias{
+            border: solid 1px black;
+            width: 375px;
+            display: none;
+            position: absolute;
+        }
+
+        #sugerencias a{
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #aaa;
+        }
+        #sugerencias a:hover{
+            background-color: #003366;
+            color: white;
+        }
+
+        #sugerencias strong{
+            color: black;
+        }  */
+
+
+/* Ejercicios. Temporizador 74/102 */
+
+button{
+            border: none;
+            background-color: royalblue;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bolder;
+        }
+        #temporizador-container{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 48px;
+        }
+
+        #display-container{
+            display: flex;
+            justify-content: center;
+        }
+
+        .display{
+            padding: 20px 40px;
+            border: solid 1px #ccc;
+        }
+
+        .display div{
+            display: block;
+            text-align: center;
+        }
+
+        .display .numero{
+            font-size: 80px;
+        }
+
+        .display .botones-container button{
+            font-size: 30px;
+            padding: 10px 15px;
+        }
+
+        #botones-container{
+            text-align: center;
+        }
+
+
+
+
+
+
+
+
+  </style> 
+
+
+
 </head>
 <body>
-  
+<!-- <button onclick="javascript:mostrarMensaje()">Boton con javascript clasico</button>
+<button id="boton">Da click</button>
+<div id="respuesta">
 
-<header>
-  <div id="logo"><img src="logo.png"  /></div>
- 
-  <ul>
-    <li class="item"><a href="#">Services</a></li>
-    <li class="item"><a href="#">About</a></li>
-    <li class="item"><a href="#">Contact</a></li>
-   
-  </ul>
- 
-  </header>
-  <script src="main.js"> </script>
+</div>
 
+<div id="capa">
+  <img id="edificio" src="edificio.jpg" alt="">
+</div> -->
+
+
+<!-- Formularios 68/102 -->
+
+  <!-- <form action="#">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <label for="lenguajes">Lenguajes</label>
+    <input type="checkbox" name="lenguajes" value="javascript">Javascript
+    <input type="checkbox" name="lenguajes" value="php"> PHP
+    <input type="checkbox" name="lenguajes" value="python"> Python
+
+    <label for="seniority">Seniority</label>
+    <input type="radio" name="level" value="junior">Junior
+    <input type="radio" name="level" value="senior"> Senior
+    <input type="radio" name="level" value="principal"> Principal
+
+    <label for="pais">Pais</label>
+    <select name="pais" id="pais">
+      <option value=""></option>
+      <option value="mexico">Mexico</option>
+      <option value="us">Estados Unidos</option>
+      <option value="canada">Canada</option>
+    </select>
+
+    <input type="text" id="itPais">
+    <button id="bPais">Añadir pais</button>
+
+    <p>
+      <input type="submit" id="boton" value="Enviar datos">
+    </p>
+
+  </form>
+
+  <div id="respuesta">
+
+  </div> -->
+
+<!-- Slider de imágenes 69/102 -->
+
+<!-- <div id="slider-container">
+  <div id="buttons-container">
+    <button id="bPrev">Atras</button>
+    <button id="bNext">Siguiente</button>
+  </div>
+
+  <div id="slider-items">
+    <div class="item">
+      <img src="img/foto01.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="img/foto02.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="img/foto03.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="img/foto04.jpg" alt="">
+    </div>
+  </div> 
+</div> -->
+
+ <!-- Acordeón de contenido 70/102  -->
+
+<!-- <div class="acordeon">
+  <div class="item">
+    <div class="header"><button>Elemento 1</button></div>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem recusandae, commodi sint at quia nulla
+      placeat. Modi nostrum culpa eos dolorem dignissimos. Cum veritatis nulla modi nam blanditiis quasi?
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="header"><button>Elemento 1</button></div>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem recusandae, commodi sint at quia nulla
+      placeat. Modi nostrum culpa eos dolorem dignissimos. Cum veritatis nulla modi nam blanditiis quasi?
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="header"><button>Elemento 1</button></div>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem recusandae, commodi sint at quia nulla
+      placeat. Modi nostrum culpa eos dolorem dignissimos. Cum veritatis nulla modi nam blanditiis quasi?
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="header"><button>Elemento 1</button></div>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem recusandae, commodi sint at quia nulla
+      placeat. Modi nostrum culpa eos dolorem dignissimos. Cum veritatis nulla modi nam blanditiis quasi?
+    </div>
+  </div>
+</div> -->
+
+ <!-- Calculadora 71/102  -->
+
+<!-- <div id="calculadora">
+  <div id="display">
+    0
+  </div>
+
+  <div id="botones-container">
+
+  </div>
+</div> -->
+
+<!-- 72/102 Pestañas -->
+
+<!-- <div id="tabs-container">
+  <div class="tabs">
+    <div class="tab"><button>Tab 1</button></div>
+    <div class="tab"><button>Tab 2</button></div>
+    <div class="tab"><button>Tab 3</button></div>
+  </div>
+
+  <div class="tabs-containers">
+    <div class="content">hola 1</div>
+    <div class="content">hola 2</div>
+    <div class="content">hola 3</div>
+  </div>
+</div> -->
+
+
+<!-- Buscador con sugerencias 73/102 -->
+
+<!-- <div id="buscador-container">
+  <input type="text" id="buscador">
+  <div id="sugerencias">
+  </div>
+</div> -->
+
+
+ <!-- Ejercicios. Temporizador 74/102  -->
+
+<div id="temporizador-container">
+  <div id="display-container">
+    <div id="horas" class="display">
+      <div class="titulo">horas</div>
+      <div class="numero">00</div>
+      <div class="botones-container">
+        <button class="bAumentar" data-unidad="horas">+</button>
+        <button class="bDisminuir" data-unidad="horas">-</button>
+      </div>
+    </div>
+    <div id="minutos" class="display">
+      <div class="titulo">minutos</div>
+      <div class="numero">00</div>
+      <div class="botones-container">
+        <button class="bAumentar" data-unidad="minutos">+</button>
+        <button class="bDisminuir" data-unidad="minutos">-</button>
+      </div>
+    </div>
+    <div id="segundos" class="display">
+      <div class="titulo">segundos</div>
+      <div class="numero">00</div>
+      <div class="botones-container">
+        <button class="bAumentar" data-unidad="segundos">+</button>
+        <button class="bDisminuir" data-unidad="segundos">-</button>
+      </div>
+    </div>
+  </div>
+  <div id="botones-container">
+    <button id="bIniciar">Iniciar</button>
+    <button id="bDetener">Detener</button>
+    <button id="bReiniciar">Reiniciar</button>
+  </div>
+</div>
+
+
+
+
+
+
+  <script src="main.js"></script>
 </body>
-
-
-
 
 </html>
