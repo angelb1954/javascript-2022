@@ -1619,9 +1619,34 @@
 
 // logo.parentNode // Nos devuelve el padre del elemento
 // logo.nextElementSibling // nos devuelve elos hermanos de logo
+// ----------------------------------------
+// |Resumen: Métodos de acceso del DOM      |
+// |getElementById(id)                      |
+// |getElementsByClassName(nombreDeClase)   |
+// |getElementsByTagName(nombreDeEtiqueta)  |
+// |querySelector(selectorCss)              | 
+// |querySelectorAll(selectorCss)           |
+// -----------------------------------------
+
+// // Puedes seleccionar elementos en JavaScript usando métodos como  
+
+// getElementById(), querySelector(), y querySelectorAll().
+
+// // Si quieres agregar nuevos elementos al documento puedes hacerlo con  
+
+// document.createElement().
+
+// // También puedes cambiar los estilos en línea de CSS   de los elementos usando la propiedad  
+
+// style.
+
+// // Si deseas agregar eventos a elementos como botones, puedes usar el 
+
+// addEventListener().
+
+
 
 // Introducción al DOM (práctica) 53/102
-
 
 
 // const logo = document.getElementById('logo');
@@ -1695,6 +1720,56 @@
 
 // DOM Modificar propiedades de elementos (Teoria) 55/102
 
+// Modificación de atributos
+
+// Los atributos son valores que contienen información adicional sobre elementos HTML. Normalmente vienen en pares de nombre y valor, y pueden ser esenciales según elemento.
+
+// Algunos de los atributos HTML más comunes son el atributo src de una etiqueta img, el href de una etiqueta a, class, id y style. Para obtener una lista completa de atributos HTML, consulte la lista de atributos en la Mozilla Developer Network. Los elementos personalizados que no formen parte del estándar HTML se prefijarán con data-.
+
+// En JavaScript, tenemos cuatro métodos para modificar atributos de elementos:
+
+// Método	Descripción	Ejemplo
+// hasAttribute()	Muestra un booleano true o false.	element.hasAttribute('href');
+// getAttribute()	Muestra el valor de un atributo especificado o null.	element.getAttribute('href');
+// setAttribute()	Agrega o actualiza el valor de un atributo especificado.	element.setAttribute('href', 'index.html');
+// removeAttribute()	Elimina un atributo de un elemento.	element.removeAttribute('href');
+
+// Modificación de clases
+
+// // El atributo de class corresponde a los selectores de clase de CSS. No se debe confundir con las clases ES6, un tipo especial de función de JavaScript.
+
+// // Las clases CSS se utilizan para aplicar estilos a varios elementos, a diferencia de los ID que solo pueden existir una vez por página. En JavaScript, contamos con las propied className y classList para trabajar con el atributo de clase.
+
+// Método/Propiedad 	     Descripción	                                                                                Ejemplo
+// className	             Obtiene o establece un valor de clase.	                                                      element.className;
+// classList.add()	       Agrega uno o más valores de clase.	                                                          element.classList.add('active');
+// classList.toggle()	   Activa o desactiva una clase.	                                                              element.classList.toggle('active');
+// classList.contains()   Comprueba si el valor de clase existe.	                                                      element.classList.contains('active');
+// classList.replace()	   Sustituye un valor de clase existente por uno nuevo.	                                        element.classList.replace('old', 'new');
+// classList.remove()	   Elimina un valor de clase.	                                                                  element.classList.remove('active');
+
+//  //diferencia del ejemplo de className, al utilizarse classList.add() se añadirá una nueva clase a la lista existente. También puede agregar varias clases como cadenas separadas por comas. También es posible utilizar setAttribute para modificar la clase de un elemento.
+
+// //   Una opción para editar los estilos es setAttribute().
+
+// // Select div
+// const div = document.querySelector('div');
+
+// // Apply style to div
+// div.setAttribute('style', 'text-align: center');
+// // Sin embargo, esto eliminará todos los estilos alineados existentes del elemento. Debido a que este probablemente no sea el efecto deseado, es mejor utilizar el atributo style directamente.
+
+// div.style.height = '100px';
+// div.style.width = '100px';
+// div.style.border = '2px solid black';
+
+// // Las propiedades de CSS se escriben en kebab-case, que son palabras minúsculas separadas por guiones. Tenga en cuenta que las propiedades de CSS de kebab-case no se pueden utilizar en la propiedad de estilo de JavaScript. Se sustituirán por su equivalente en camelCase, en el cual la primera palabra se escribe con minúscula y las siguientes con mayúsculas. En otras palabras, en vez de text-align utilizaremos textAlign para la propiedad de estilo de JavaScript.
+
+// // Make div into a circle and vertically center the text
+// div.style.borderRadius = '50%';
+// div.style.display = 'flex';
+// div.style.justifyContent = 'center';
+// div.style.alignItems = 'center';
 
 
 // const imagen = document.querySelector("#portada");
@@ -2527,110 +2602,939 @@
 //  Ejercicios. Temporizador 74/102
 
 
-const tiempo = {
-  segundos: {
-    valor: 0,
-    limite: 59,
-  },
-  minutos: {
-    valor: 0,
-    limite: 59,
-  },
-  horas: {
-    valor: 0,
-    limite: 23,
-  },
-};
+// const tiempo = {
+//   segundos: {
+//     valor: 0,
+//     limite: 59,
+//   },
+//   minutos: {
+//     valor: 0,
+//     limite: 59,
+//   },
+//   horas: {
+//     valor: 0,
+//     limite: 23,
+//   },
+// };
+// // Vamos a definir los elementos a utilizar del HTML
+// const botonesAumentar = document.querySelectorAll(".bAumentar");
+// const botonesDisminuir = document.querySelectorAll(".bDisminuir");
+// const bIniciar = document.querySelector("#bIniciar");
+// const bDetener = document.querySelector("#bDetener");
+// const bReiniciar = document.querySelector("#bReiniciar");
 
-const botonesAumentar = document.querySelectorAll(".bAumentar");
-const botonesDisminuir = document.querySelectorAll(".bDisminuir");
-const bIniciar = document.querySelector("#bIniciar");
-const bDetener = document.querySelector("#bDetener");
-const bReiniciar = document.querySelector("#bReiniciar");
+// //Para manejar el uso del tiempo vamos a crear una variable
+// let contador;
 
-let contador;
+// // vamos a definir los eventos para los botones
 
-botonesAumentar.forEach((botonAumentar) => {
-  botonAumentar.addEventListener("click", (e) => {
-    //console.log(e.target.getAttribute('data-unidad'));
-    const unidad = e.target.getAttribute("data-unidad");
-    incrementar(unidad);
-    //console.log(tiempo);
-  });
-});
+// botonesAumentar.forEach((botonAumentar) => {
+//   botonAumentar.addEventListener("click", (e) => {
+//     //console.log(e.target.getAttribute('data-unidad'));
+//     const unidad = e.target.getAttribute("data-unidad");
+//     incrementar(unidad);
+//     //console.log(tiempo);
+//   });
+// });
 
-botonesDisminuir.forEach((botonesDisminuir) => {
-  botonesDisminuir.addEventListener("click", (e) => {
-    //console.log(e.target.getAttribute('data-unidad'));
-    const unidad = e.target.getAttribute("data-unidad");
-    disminuir(unidad);
-    //console.log(tiempo);
-  });
-});
+// botonesDisminuir.forEach((botonesDisminuir) => {
+//   botonesDisminuir.addEventListener("click", (e) => {
+//     //console.log(e.target.getAttribute('data-unidad'));
+//     const unidad = e.target.getAttribute("data-unidad");
+//     disminuir(unidad);
+//     //console.log(tiempo);
+//   });
+// });
 
-bIniciar.addEventListener("click", iniciarCuenta);
-bDetener.addEventListener("click", detenerCuenta);
-bReiniciar.addEventListener("click", (e) => {
-  detenerCuenta();
-  tiempo.segundos.valor = 0;
-  tiempo.minutos.valor = 0;
-  tiempo.horas.valor = 0;
-  pintarInterfaz();
-});
+// bIniciar.addEventListener("click", iniciarCuenta);
+// bDetener.addEventListener("click", detenerCuenta);
+// bReiniciar.addEventListener("click", (e) => {
+//   detenerCuenta();
+//   tiempo.segundos.valor = 0;
+//   tiempo.minutos.valor = 0;
+//   tiempo.horas.valor = 0;
+//   pintarInterfaz();
+// });
 
-function incrementar(unidad) {
-  if (tiempo[unidad].valor + 1 <= tiempo[unidad].limite) {
-    tiempo[unidad].valor++;
-  }
+// function incrementar(unidad) {
+//   if (tiempo[unidad].valor + 1 <= tiempo[unidad].limite) {
+//     tiempo[unidad].valor++;
+//   }
 
-  pintarInterfaz();
-}
+//   pintarInterfaz();
+// }
 
-function disminuir(unidad) {
-  if (tiempo[unidad].valor - 1 >= 0) {
-    tiempo[unidad].valor--;
-  }
+// function disminuir(unidad) {
+//   if (tiempo[unidad].valor - 1 >= 0) {
+//     tiempo[unidad].valor--;
+//   }
 
-  pintarInterfaz();
-}
+//   pintarInterfaz();
+// }
 
-function pintarInterfaz() {
-  const horas = document.querySelector("#horas .numero");
-  const minutos = document.querySelector("#minutos .numero");
-  const segundos = document.querySelector("#segundos .numero");
+// function pintarInterfaz() {
+//   const horas = document.querySelector("#horas .numero");
+//   const minutos = document.querySelector("#minutos .numero");
+//   const segundos = document.querySelector("#segundos .numero");
 
-  horas.textContent = `0${tiempo.horas.valor}`.slice(-2);
-  minutos.textContent = `0${tiempo.minutos.valor}`.slice(-2);
-  segundos.textContent = `0${tiempo.segundos.valor}`.slice(-2);
-}
+//   horas.textContent = `0${tiempo.horas.valor}`.slice(-2);
+//   minutos.textContent = `0${tiempo.minutos.valor}`.slice(-2);
+//   segundos.textContent = `0${tiempo.segundos.valor}`.slice(-2);
+// }
 
-function iniciarCuenta() {
-  contador = setInterval(() => {
-    const { horas, minutos, segundos } = tiempo;
+// function iniciarCuenta() {
+//   contador = setInterval(() => {
+//     const { horas, minutos, segundos } = tiempo;
 
-    if (horas.valor === 0 && minutos.valor === 0 && segundos.valor === 0) {
-      detenerCuenta();
-    } else if (segundos.valor === 0) {
-      if (minutos.valor === 0) {
-        if (horas.valor === 0) {
-          //nada
-        } else {
-          tiempo.minutos.valor = tiempo.minutos.limite;
-          tiempo.segundos.valor = tiempo.segundos.limite;
-          disminuir("horas");
+//     if (horas.valor === 0 && minutos.valor === 0 && segundos.valor === 0) {
+//       detenerCuenta();
+//     } else if (segundos.valor === 0) {
+//       if (minutos.valor === 0) {
+//         if (horas.valor === 0) {
+//           //nada
+//         } else {
+//           tiempo.minutos.valor = tiempo.minutos.limite;
+//           tiempo.segundos.valor = tiempo.segundos.limite;
+//           disminuir("horas");
+//         }
+//       } else {
+//         tiempo.segundos.valor = tiempo.segundos.limite;
+//         disminuir("minutos");
+//       }
+//     } else {
+//       disminuir("segundos");
+//     }
+//   }, 1000);
+// }
+
+// function detenerCuenta() {
+//   console.log("fin");
+//   clearInterval(contador);
+// }
+
+// Ejercicios. Calculador de propinas 75/102
+
+// const itPersonas = $("#personas");
+// const itTotal = $("#total");
+// const itPropina = $("#propina");
+// const bGenerar = $("#bgenerar");
+// const resultados = $("#resultados");
+// const summary = $("#summary");
+
+// let propinas = [];
+
+// let personas; //numero de personas
+// let total; //total de la cuenta
+// let totalPorPersona; //cuanto paga cada persona
+// let porcentajePropina; //% de propina
+// let propinaPorPersona; //%propina/nº de personads
+// let totalConPropina;// total + % propina
+
+// function render() {
+//   summary.innerHTML = `<h2>Total a pagar: $${totalConPropina.toFixed(2)}</h2>`;
+//   summary.innerHTML += `<h2>Propina total: $${
+//     propinaPorPersona * personas
+//   }</h2>`;
+//   let html = "";
+//   propinas.forEach((persona) => {
+//     const { id, consumo, propina, total, pagado } = persona;
+//     html += `
+//             <div class="persona ${pagado ? "pagado" : ""}" data-id="${id}">
+//                 <h3>Persona ${id}</h3>
+//                 <div class="consumo">Consumo: $${consumo}</div>
+//                 <div class="propina">Propina: $${propina}</div>
+//                 <div class="total">Total: $${total.toFixed(2)}</div>
+//                 <div class="check"><input type="checkbox" ${
+//                   pagado ? "checked" : ""
+//                 } /> Pagado</div>
+//             </div>`;
+//   });
+//   resultados.innerHTML = html;
+//   $$("input[type=checkbox]").forEach((checkbox) => {
+//     checkbox.addEventListener("click", (e) => {
+//       const id = e.target.parentElement.parentElement.getAttribute("data-id");
+//       const index = propinas.findIndex((item) => item.id == id);
+//       const persona = propinas[index];
+//       console.log(persona);
+//       persona.pagado = e.target.checked;
+//       console.log(propinas);
+//       pagar();
+//     });
+//   });
+// }
+
+// bGenerar.addEventListener("click", (e) => {
+//   calcular();
+
+//   propinas = [];
+//   for (let i = 1; i <= personas; i++) {
+//     const subtotal =
+//       parseFloat(totalPorPersona) + parseFloat(propinaPorPersona);
+//     const persona = {
+//       id: i,
+//       consumo: totalPorPersona,
+//       propina: propinaPorPersona,
+//       total: subtotal,
+//       pagado: false,
+//     };
+
+//     propinas.push(persona);
+//   }
+//   render();
+// });
+
+// function calcular() {
+//   personas = parseInt(itPersonas.value);
+//   total = parseInt(itTotal.value);
+//   totalPorPersona = parseFloat(total / personas).toFixed(2);
+//   porcentajePropina = parseFloat(itPropina.value / 100).toFixed(2);
+//   propinaPorPersona = parseFloat(totalPorPersona * porcentajePropina).toFixed(
+//     2
+//   );
+//   totalConPropina = parseFloat(total) + total * porcentajePropina;
+// }
+
+// function pagar() {
+//   const noPagados = propinas.filter((x) => x.pagado == false);
+//   const nuevoTotal = noPagados.reduce((acc, item, i) => {
+//     return (acc += parseFloat(item.total));
+//   }, 0);
+//   totalConPropina = nuevoTotal;
+//   personas = noPagados.length;
+//   render();
+// }
+
+// function $(selector) {
+//   return document.querySelector(selector);
+// }
+// function $$(selector) {
+//   return document.querySelectorAll(selector);
+// }
+
+// DOM Selects Dinámicos 76/102
+
+// const data = {
+//   paises: ["mexico", "eu", "italia"],
+
+//   estados: {
+//     mexico: ["df", "oaxaca"],
+//     eu: ["ny", "arizona"],
+//     italia: ["florencia", "roma"],
+//   },
+//   distritos: {
+//     df: ["alvaro obregon", "polanco", "cuajimalpa"],
+//     oaxaca: ["tuxtepec", "mixtle", "ocotan"],
+//     ny: ["bronx", "brooklyn", "manhattan"],
+//     arizona: ["phoenix", "tucson", "chandler"],
+//     florencia: ["fiesole", "pelago", "vinci"],
+//     roma: ["poli", "riano", "nemi"],
+//   },
+// };
+// const paises = $("#paises");
+// const estados = $("#estados");
+// const distritos = $("#distritos");
+// paises.innerHTML = "";
+
+// llenarSelect(this.paises, data.paises);
+
+// paises.addEventListener("change", (e) => {
+//   const pais = e.target.value;
+//   if (pais == "") return false;
+//   const estados = data.estados[pais];
+
+//   llenarSelect(this.estados, estados);
+// });
+
+// estados.addEventListener("change", (e) => {
+//   const estado = e.target.value;
+//   if (estado == "") return false;
+//   const distritos = data.distritos[estado];
+
+//   llenarSelect(this.distritos, distritos);
+// });
+
+// function llenarSelect(elemento, data) {
+//   elemento.innerHTML = "";
+//   const empty = document.createElement("option");
+//   elemento.add(empty);
+
+//   data.forEach((item) => {
+//     const option = document.createElement("option");
+//     option.text = item;
+//     option.value = item;
+
+//     elemento.add(option);
+//   });
+// }
+
+// function $(selector) {
+//   return document.querySelector(selector);
+// }
+// function $$(selector) {
+//   return document.querySelectorAll(selector);
+// }
+
+
+// DOM. Validaciones de password 77/102
+
+
+// const validacion = {
+//   longitud: {
+//     limite: 8,
+//     pass: false,
+//   },
+//   minusculas: {
+//     limite: 2,
+//     pass: false,
+//   },
+//   mayusculas: {
+//     limite: 2,
+//     pass: false,
+//   },
+//   numeros: {
+//     limite: 1,
+//     pass: false,
+//   },
+//   caracteres: {
+//     limite: 1,
+//     pass: false,
+//   },
+// };
+
+// const password = document.querySelector("#password");
+
+// password.addEventListener("input", (e) => {
+//   const texto = e.target.value;
+//   //longitud
+//   validacion.longitud.pass = texto.length >= validacion.longitud.limite;
+//   // minusculas: 97 - 122
+
+//   const arregloTexto = texto.split("");
+//   //    console.log(contarMinusculas(arregloTexto));
+  
+  
+//   validacion.minusculas.pass =
+//     contarMinusculas(arregloTexto) >= validacion.minusculas.limite;
+
+//   validacion.mayusculas.pass =
+//     contarMayusculas(arregloTexto) >= validacion.mayusculas.limite;
+
+//   validacion.numeros.pass =
+//     contarNumeros(arregloTexto) >= validacion.numeros.limite;
+
+//   validacion.caracteres.pass =
+//     contarCaracteres(arregloTexto) >= validacion.caracteres.limite;
+
+//   mostrarResultados();
+// });
+
+// function contarMinusculas(arreglo) {
+//   const res = arreglo.filter(
+//     (c) => parseInt(c.charCodeAt(0)) >= 97 && parseInt(c.charCodeAt(0)) <= 122
+//   );
+//   return res.length;
+// }
+
+// function contarMayusculas(arreglo) {
+//   const res = arreglo.filter(
+//     (c) => parseInt(c.charCodeAt(0)) >= 65 && parseInt(c.charCodeAt(0)) <= 90
+//   );
+//   return res.length;
+// }
+
+// function contarNumeros(arreglo) {
+//   const res = arreglo.filter(
+//     (c) => parseInt(c.charCodeAt(0)) >= 48 && parseInt(c.charCodeAt(0)) <= 57
+//   );
+//   return res.length;
+// }
+
+// function contarCaracteres(arreglo) {
+//   const res = arreglo.filter(
+//     (c) =>
+//       (parseInt(c.charCodeAt(0)) >= 33 && parseInt(c.charCodeAt(0)) <= 47) ||
+//       (parseInt(c.charCodeAt(0)) >= 58 && parseInt(c.charCodeAt(0)) <= 64)
+//   );
+//   return res.length;
+// }
+
+// function mostrarResultados() {
+//   const resultados = document.querySelector("#resultados");
+//   resultados.textContent = "";
+//   for (prop in validacion) {
+//     const criterio = validacion[prop];
+//     const { limite, pass } = criterio;
+//     resultados.innerHTML += `<div class="${
+//       pass ? "success" : "error"
+//     }">${prop}: al menos ${limite}</div>`;
+//   }
+// }
+
+
+// DOM. Validacion de correo 78/102
+
+
+// const validacion = {
+//   longitud: false,
+//   arroba: false,
+//   puntos: false,
+//   estructura: false,
+// };
+
+// const email = document.querySelector("#email");
+
+// email.addEventListener("input", (e) => {
+//   const texto = e.target.value;
+//   const arregloTexto = texto.split("");
+//   validacion.longitud = texto.length >= 6;
+//   validacion.arroba = contarCaracter(arregloTexto, "@") === 1;
+//   validacion.puntos = contarCaracter(arregloTexto, ".") === 1;
+//   validacion.estructura = validarEstructura(arregloTexto);
+//   console.log(validacion);
+//   mostrarResultados();
+// });
+
+// function contarCaracter(arreglo, caracter) {
+//   console.log("sds");
+//   const res = arreglo.filter((c) => c === caracter);
+//   return res.length;
+// }
+
+// function validarEstructura(arreglo) {
+//   let res = 0;
+//   let index = arreglo.indexOf("@");
+
+//   if (index > 0 && index < arreglo.length - 3) {
+//     res++;
+//   }
+//   index = arreglo.indexOf(".");
+//   if (index > 0 && index < arreglo.length - 3) {
+//     if (arreglo[index - 1] != "." || arreglo[index + 1] != ".") {
+//       res++;
+//     }
+//   }
+
+//   if (res == 2) return true;
+//   return false;
+// }
+
+// function mostrarResultados() {
+//   const resultados = document.querySelector("#resultados");
+//   resultados.textContent = "";
+//   for (prop in validacion) {
+//     const criterio = validacion[prop];
+//     resultados.innerHTML += `<div class="${
+//       criterio ? "success" : "error"
+//     }">${prop}</div>`;
+//   }
+// }
+
+// Asincronismo 79/102
+
+// Normalmente, el código de un programa determinado se ejecuta directamente, y solo sucede una cosa a la vez. Si una función se basa en el resultado de otra función, tiene que esperar a que la otra función termine y regrese, y hasta que eso suceda, todo el programa se detiene esencialmente desde la perspectiva del usuario.
+
+// Javascript es un lenguaje que  fue creado para trabajar de forma síncrona por lo tanto solamente se puede ejecutar en un solo hilo (main thread). A diferencia de algunos otros lenguajes de programación los cuales nos permiten crear más hilos o estos tres o procesos adicionales para
+// poder crear tareas en paralelo Esta es una ventaja o desventaja lo vamos a ver más adelante lo importante de esta primera parte de la introducción Pues es que entiendan que realmente Ya ves Script no corre en ningún proceso en paralelo solamente tiene un proceso dedicado a la ejecución de nuestro código y vamos a ver más adelante Cómo podemos aprovechar algunas funcionalidades para simular esta parte del paralelismo o del asincronismo que es tratar de evitar que nos suceda lo que nos pasa con nuestra aplicación de calculadora es decir poder ejecutar más de una tarea al mismo tiempo sin la necesidad de bloquear toda la aplicación web
+
+
+// Ejercicio de Asincronismo 80/102
+
+// setInterval(() => {
+//   document.querySelector("#resultado").textContent = new Date();
+// }, 1000);
+
+// for (let i = 0; i < 10; i++) {
+//   console.log("hola");
+// }
+// // console.log("Fin del ciclo");
+
+// console.log("Inicio de timer");
+// setInterval(() => {
+//   console.log("timer activado");
+// }, 1000);
+// console.log("Fin de timer");
+// // setInterval ejecuta la función cada cierto tiempo (expresado en milisegundos)
+
+//  console.log("inicio ciclo");
+//  for (var i = 0; i <= 5; i++) {
+//    setTimeout(function () {
+//      console.log("count ", i);
+//    }, 3000);
+//  }
+//  console.log("fin ciclo");
+// //setTomeout a partir de un determinado tiempo( expresado en milisegundos)
+
+
+
+//  console.log("inicio ciclo 2");
+//  for (let i = 0; i <= 5; i++) {
+//    setTimeout(function () {
+//      console.log("count ", i);
+//    }, 3000);
+//  }
+//  console.log("fin ciclo 2");
+
+// Callbacks (Teoría) 81/102
+
+// Una función de callback es una función que se pasa a otra función como un argumento, que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción.
+
+// Sin embargo, las callbacks a menudo se utilizan para continuar con la ejecución del código después de que se haya completado una operación a sincrónica — estas se denominan devoluciones de llamada asincrónicas.
+
+// Callbacks
+
+// Tarea 1 -> Tarea 2 -> Tarea 3
+//               |
+//            Callback -> Tarea 4   
+
+// boton.adEventListener('click', function(){});                                |
+//                                   (1)
+
+// //  (1)La funcion se va a ejecutar en cualquier momento de la aplicación cuando al boton se le da click. No depende de una tarea anterior y las siguientes tareas no la tienen que esperar
+
+// Callbacks
+// tarea([1,2,3,4,5],function() {
+// // código
+// });
+
+// Callbacks (prácticas) 82/102
+
+// const boton = document.querySelector('#boton');
+// const input = document.querySelector('#input');
+
+// let dato = 50;
+//  boton.addEventListener('click', e  => {
+//     dato = 100;
+//     console.log('evento click', 'dato = ', dato);
+// }); 
+// console.log('Dato = ', dato);
+
+// function calcularSuma(valores, callback){
+//     const res = valores.reduce((acc, value) => acc += value, 0);
+//     callback();
+//     console.log('ya se mandó a llamar el callback');
+//     return res;
+// }
+
+// console.log(calcularSuma([1,2,3,4,5], function(){
+//     console.log('Aquí termina la función');
+// }));
+
+// // Callbacks de exito y error 83/102
+
+// function calcularSuma2(valores, callback){
+//     const res = valores.reduce((acc, value) => acc += value, 0);
+//     callback(res);
+//     console.log('ya se mandó a llamar el callback');
+// }
+
+// calcularSuma2([2,4,6,8], res => {
+//     console.log('el resultado es: ', res);
+// });
+
+// function calcularSuma3(valores, callback, errorCallback){
+//     const res = valores.reduce((acc, value) => {
+//         if(isNaN(value)){
+//             errorCallback(`El valor ${value} no es numérico`);
+//             return false;
+//         }else{
+//             return acc+= value;
+//         }
+//     });
+//     callback(res);
+// }
+
+// calcularSuma3([1,1,1,'d'], res => {
+//     if(res) console.log('resultado de calcularSuma3 =', res);
+// }, error => {
+//     console.error(error);
+// });
+
+
+// Callbacks anidados (prácticas) 84/102
+// segunda parte
+
+// const convertir = (texto, callback, errorCallback) => {
+//     if(texto.length == 0){
+//         errorCallback('No hay texto que transformar');
+//         return false;
+//     }
+//     callback(texto.toUpperCase());
+// }
+
+// const obtenerCodigo = (texto, callback, errorCallback) => {
+//     if(texto.length == 0){
+//         errorCallback('No hay texto que transformar');
+//         return false;
+//     }
+//     const res = texto.split('').map(valor => {
+//         return valor.charCodeAt(0);
+//     });
+//     callback(res);
+// }
+
+// const transformar = (arreglo, callback, errorCallback) => {
+//     if(arreglo.length == 0){
+//         errorCallback('arreglo vacio');
+//         return false;
+//     }
+//     const res = arreglo.map(valor => valor * 5).reduce((acc, valor) => acc += valor , 0);
+
+//     callback(res);
+// }
+
+
+// boton.addEventListener('click', e => {
+//     convertir(input.value, res => {
+//         obtenerCodigo(res, arreglo => {
+//             console.log(arreglo);
+//             transformar(arreglo, suma => {
+//                 console.log('suma final', suma);
+//             }, error => {
+//                 throw new Error(error);    
+//             });
+//         }, error =>{
+//             throw new Error(error);
+//         });
+//     }, error => {
+//         throw new Error(error);
+//     });
+// });
+
+
+// Promesas (Teoría) 85/102
+
+// Una Promise (promesa en castellano) es un objeto que representa la terminación o el fracaso de una operación asíncrona. 
+//             -------- Resuelve-> Tarea 4
+//            |
+//         Promesa  --- Rechaza -> Tarea 5
+//            |   
+//            |     
+// Tarea 1->Tarea 2->Tarea 3
+
+
+// const p= new Promise(function(resolve, reject){
+// if(condición se cumple){
+// return resolve(params);
+// }else{
+// return reject(params);
+// }
+// });
+
+// // La diferencia con los Callbacks viene cuando llamamos a la función:
+
+// p.then(function(result){},function(error){});
+//    (1)        (2)                 (3)
+
+// (1) Ejecuta la Promesa
+// (2) Ejecuta el resolve
+// (3) Ejecuta el reject 
+
+// // También se puede llamar así, separando la función resolve de la funcion reject, usando catch. Se considera una forma más elegante de usar las promesas
+
+// p.then(function(result){}).catch(function(error){});
+//    (1)        (2)                 (3)
+
+// // También se puede usar esta notación que se considera más limpia
+
+// p
+// .then(function(result){})
+// .catch(function(error){};)
+
+// Promesas (práctica) 86/102
+
+// const promesa = new Promise((resolve, reject) => {
+//     const numero = 100;
+//     if(numero == 1000) resolve('el valor es correcto');
+
+//     reject('el valor no es correcto');
+// });
+
+// // console.log(promesa);
+// // promesa
+// // .then(res => {
+// //     console.log(res);
+// // }, error => {
+// //     console.error(error);
+// // });
+
+// // También se puede usar esta notación que resulta un código más limpio
+// promesa
+// .then(resultado=> console.log(resultado))
+// .catch(error=>console.log(error));
+
+
+
+
+
+// const promesa2 = function(){
+//     return new Promise((resolve, reject) => {
+//         let res = 0;
+//         for(let i = 1; i< 1000; i++){
+//             res += i*i ;
+//         }
+//         if(res <= 0) reject('No se completó la operación');
+//         resolve(res);
+//     });
+// }
+
+
+
+// console.log('aquí empieza promesa 2');
+// promesa2()
+// .then(res => {
+//     console.log('resolví la promesa, res=', res);
+// })
+// .catch(error => {
+//     console.error(error);
+// });
+// console.log('aquí termina promesa 2');
+
+// console.log('el valor de res =', res);
+// // -> ReferenceError: res is not defined
+// // En este caso da un error porque estamos llamando a res fuera del contexto el que está incluida la variable
+
+
+
+
+
+// Callbacks vs Promesas (práctica) 87/102
+
+// const convertir = texto => {
+//     return new Promise((resolve, reject) => {
+//         if(texto.length == 0){
+//             reject('No hay texto que transformar');
+//         }
+//         resolve(texto.toUpperCase());
+//     });
+// }
+
+// const obtenerCodigo = texto => {
+//     const p = new Promise((resolve, reject) => {
+//         if(texto.length == 0){
+//             reject('No hay texto que transformar');
+//         }
+//         const res = texto.split('').map(valor => {
+//             return valor.charCodeAt(0);
+//         });
+//         resolve(res);
+//     });
+    
+//     return p;
+// }
+
+// function transformar(arreglo){
+//     return new Promise((resolve, reject) => {
+//         if(arreglo.length == 0){
+//             reject('arreglo vacio');
+//             return false;
+//         }
+//         const res = arreglo.map(valor => valor * 5).reduce((acc, valor) => acc += valor , 0);
+    
+//         resolve(res);
+//     });
+// }
+
+// convertir('Marcos Rivas')
+// .then(res => obtenerCodigo(res))
+// .then(res => transformar(res))
+// .then(res =>{
+//     console.log('resultado: ', res);
+// })
+// .catch(error => {
+//     throw new Error(error);
+// });
+
+
+// Promesas al mismo tiempo 88/102
+
+//resolver todas las promesas
+
+// const p1 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 1000, "uno");
+// });
+// const p2 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 2000, "dos");
+// });
+// const p3 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 3000, "tres");
+// });
+// const p4 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 4000, "cuatro");
+// });
+// const p5 = new Promise((resolve, reject) => {
+//    setTimeout(resolve, 5000, "cinco");
+//   //reject("error");
+// });
+
+// Promise
+// .all([p1,p2,p3,p4,p5])
+// .then(resultado =>{
+//   console.log(resultado);
+
+// })
+// .catch(error =>{
+//   console.log(error)
+// });
+
+// Async y Await Teoria 89/102
+
+// ¿Cómo uso async-await? async y await Dentro de una función asíncrona, puede usar la palabra clave await antes de una llamada a una función que devuelve una promesa. Esto hace que el código espere en ese punto hasta que se liquide la promesa, momento en el que el valor cumplido de la promesa se trata como un valor de retorno o se arroja el valor rechazado
+
+
+// Async/Await
+
+// async function actividad(){
+
+// const res = await promesa() ;
+// }
+
+// const promesa = new Promise(function(resolve,
+// reject){
+//   // ...
+// }); 
+
+// Con esto estamos haciendo que promesa sea una función asíncrona, pero que espere a terminarse para poder seguir con el tiempo de ejecución del main Thread en javascript 
+
+
+
+// Async y Await (práctica) 90/102
+
+// const p1 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 1000, "uno");
+// });
+// const p2 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 2000, "dos");
+// });
+// const p3 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 3000, "tres");
+// });
+// const p4 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 4000, "cuatro");
+// });
+// const p5 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 5000, "cinco");
+//   //reject("reject");
+// });
+
+//async await
+// const operacion = new Promise(function (resolve, reject) {
+//   setTimeout(resolve, 3000, "Operación completa**");
+// });
+
+// async function resolver() {
+//   console.log("inicia operación");
+//   const res = await operacion;
+//   console.log(res);
+//   console.log("termina operación");
+// }
+
+// resolver();
+
+// (async () =>{
+//   console.log("inicia operación con async/await");
+//   const res = await Promise.all([p1, p2, p3, p4, p5]);
+//   console.log("async/await", res);
+//   console.log("termina operación con async/await");
+// })();
+
+// Introducción a JSON 91/102
+
+// JavaScript Object Notation (JSON)
+// JSON es una sintaxis para serializar objetos, arreglos, números, cadenas, booleanos y nulos. Está basado sobre sintaxis JavaScript pero es diferente a ella: algo JavaScript no es JSON, y algo JSON no es JavaScript. Mira también: JSON: The JavaScript subset that isn't.
+
+// |Tipo JavaScript|	Diferencia JSON|
+ 
+// |Objetos y arreglos |	Los nombres de las
+//  propiedades deben tener doble comilla; las comas finales están prohibidas.
+// |Números |	Los ceros a la izquierda están prohibidos; un punto decimal debe ser seguido al menos por un dígito.
+// |Cadenas |	Solo un limitado conjunto de caracteres pueden ser de escape; ciertos caracteres de control estan prohibidos; los caracteres de separador de linea Unicode (U+2028) y el separador de parrafo (U+2029) son permitidos; las cadenas deben estar entre comillas dobles. Mira el siguiente ejemplo donde JSON.parse funciona bien y unSyntaxError es generado cuando se evalua el codigo como JavaScript:
+
+    // var code = '"\u2028\u2029"';
+    // JSON.parse(code); // works fine
+    // eval(code); // fails
+
+//Diferencias entre JSON y un Objeto JS
+
+// • JSON es sólo un formato de datos — contiene sólo propiedades, no métodos.
+// • JSON requiere usar comillas dobles para las cadenas y los nombres de propiedades. Las comillas
+// simples no son válidas.
+// • Una coma o dos puntos mal ubicados pueden producir que un archivo JSON no funcione.
+// • JSON puede tomar la forma de cualquier tipo de datos que sea un JSON, no sólo arreglos u objetos. Así, por ejemplo, una cadena o un número único podrían ser objetos JSON válidos.
+// • A diferencia del código JavaScript en que las propiedades del objeto puede no estar entre 
+// comillas, en JSON, sólo las cadenas entre comillas pueden ser utilizadas como propiedades
+
+//JSON (prácticas) 92/102
+
+{
+    "nombre": "Marcos",
+    "edad": -14.5,
+    "elementos":{
+        "titulo": "Elemento 1",
+        "completo": true,
+        "habilidades":[
+            {
+                "id": 0,
+                "fecha": "12/12/2020"
+            },
+            {
+                "id": 0,
+                "fecha": "12/12/2020"
+            },
+            {
+                "id": 0,
+                "fecha": "12/12/2020"
+            }
+        ],
+        "lenguajes":{
+            "lenguage01": {
+                "nombre": "Javascript"
+            }
         }
-      } else {
-        tiempo.segundos.valor = tiempo.segundos.limite;
-        disminuir("minutos");
-      }
-    } else {
-      disminuir("segundos");
     }
-  }, 1000);
 }
 
-function detenerCuenta() {
-  console.log("fin");
-  clearInterval(contador);
-}
 
+// Solicitudes HTTP (Teoría) 93/102
+
+// Cuando un dispositivo localiza una red Wi‑Fi y se conecta a ella, envía una solicitud HTTP siempre que necesita ir a otra página o archivo. Si la solicitud se procesa correctamente, el usuario puede acceder a todo lo que quiera en la Web. La mayoría de los dispositivos funcionan igual con una solicitud HTTP.
+
+// Métodos principales para enviar Solicitudes HTTP 
+
+// GET
+// -> Solicita información del servidor
+// POST
+// -> Mandar información al servidor para crear o actualizar
+
+// // Así es como se ve una solicitud recibida
+
+
+// GET /hello.htm HTTP/I.I
+// User-
+// Agent: Mozilla/4.0 (compatible;MSIE5.01;
+// Windows NT)
+// Host: www.vidamrr.com
+// Accept-Language: en-us
+// Accept-Encoding: gzip, deflate
+// Connection: Keep-Alive
+
+// // Si se manda una solicitud 
+
+// POST /upload.php HTTP/I.I
+// User-Agent.• Mozilla/4.O (compatible; MSIE5.01; Windows NT)
+// Host: www.vidamrr.com
+// Content-Type: application/x-www-form-urlencoded
+// Content-Length: length
+// Accept-Language: en-us
+// Accept-Encoding: gzip, deflate
+// Connection: Keep-Alive
+// nombre=Marcos6edad=28
+
+// AJAX (Teoría) 94/102
+
+// JavaScript Asíncrono + XML (AJAX) no es una tecnología por sí misma, es un término que describe un nuevo modo de utilizar conjuntamente varias tecnologías existentes. Esto incluye: HTML o XHTML, CSS, JavaScript, DOM, XML, XSLT, y lo más importante, el objeto XMLHttpRequest. Cuando estas tecnologías se combinan en un modelo AJAX, es posible lograr aplicaciones web capaces de actualizarse continuamente sin tener que volver a cargar la página completa. Esto crea aplicaciones más rápidas y con mejor respuesta a las acciones del usuario.
+
+// Solicitudes HTTP (práctica) 95/102
+
+// Ver backend/tutorial.http
+
+// Solicitudes con XMLHttpRequest (Teoría) 96/102
