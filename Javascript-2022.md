@@ -208,14 +208,15 @@ console.log((likes===1)? likes +` like` : likes + ` likes`)
 # CICLOS 13-14/102
 
 ## **Ciclo for**
-
+```js
 - for( expresión-inicial(1); condición(2); expresión—final(3) ) {
   código que va a repetirse}
+```
+
 - Inicializar contador (1)
 - condición que debe cumplirse para que el ciclo se siga ejecutando (2)
 - Incremento del contador (3)
-- for( expresión-inicial(1); condición(2); expresión—final(3) ) {
-  código que va a repetirse}
+
 
 ## **Ciclo While y do While**
 
@@ -420,117 +421,125 @@ multiplicacion("5", "9");
 // termina función
 ```
 
-// Argumentos de funciones (teoría) 18/102
+# Argumentos de funciones (teoría) 18/102
 
-// function suma(numero1, numer02) {
-// //argumentos
-// let res = numero1 + numer02;
-// return res
-//}
+```js
+ function suma(numero1, numer02) {
+ //argumentos
+ let res = numero1 + numer02;
+ return res
+}
+```
+#### Ejemplos de Tipos de argumentos posibles
+```js
+ suma(2, 3);
+ suma('Hola', 3 ) ;
+ suma([2, 4, 6], "hey!");
+ suma({ nombre: "Marcos" }, 6);
+```
+ Aunque puede suceder que mezclando algunos de estos argumentos obtengamos un resultado que no es el deseado ;-)
 
-// Ejemplos de Tipos de argumentos posibles
+ Notación cuando desconocemos el número de argumentos de la función
+```js
+ function suma(...numeros){
+ let res = 0;
+ for (let i = 0; i < numeros.length; i++) {
+ res += numeros[i]
+ }
 
-// suma(2, 3);
-// suma('Hola', 3 ) ;
-// suma([2, 4, 6], "hey!");
-// suma({ nombre: "Marcos" }, 6);
+ console.log('la suma es '+ res)
+ }
+ suma( 2, 3, 1, 6, 5)
+```
 
-// Aunque puede suceder que mezclando algunos de estos argumentos obtengamos un resultado que no es el deseado ;-)
+# Argumentos de funciones (práctica) 19/102
+```js
+ function area(figura, base = 0, altura = 0) {
+ switch (figura) {
+ case "cuadrado":
+ return base _ base;
+ case "rectangulo":
+ return base _ altura;
+ case "triangulo":
+ return (base \* altura) / 2;
+ default:
+ throw new Error("Figura no encontrada");
+ }
+ }
 
-// Notación cuando desconocemos el número de argumentos de la función
+ console.log(area("cuadrado", 5));
+ console.log(area("rectangulo", 10, 15));
+ console.log(area("triangulo", 5, 8));
+```
+```js
+ function perimetro(...lados) {
+ let poligono = 0;
+ for (let i = 0; i < lados.length; i++) {
 
-// function suma(...numeros){
-// let res = 0;
-// for (let i = 0; i < numeros.length; i++) {
-// res += numeros[i]
-// }
+ poligono += lados[i];
+ }
 
-// console.log('la suma es '+ res)
-// }
-// suma( 2, 3, 1, 6, 5)
+ console.log(`El perímetro de la figura es ${ poligono }`);
+ }
+```
+```js
+ perimetro(2, 3, 5, 7, 8);
 
-// Argumentos de funciones (práctica) 19/102
+ const suma = function (...numeros) {
+ let suma = 0;
+ let contador = 0;
 
-// function area(figura, base = 0, altura = 0) {
-// switch (figura) {
-// case "cuadrado":
-// return base _ base;
-// case "rectangulo":
-// return base _ altura;
-// case "triangulo":
-// return (base \* altura) / 2;
-// default:
-// throw new Error("Figura no encontrada");
-// }
-// }
+ while (contador<numeros.length) {
+ suma += numeros[contador];
+ contador++;
+ }
 
-// console.log(area("cuadrado", 5));
-// console.log(area("rectangulo", 10, 15));
-// console.log(area("triangulo", 5, 8));
-
-// function perimetro(...lados) {
-// let poligono = 0;
-// for (let i = 0; i < lados.length; i++) {
-
-// poligono += lados[i];
-// }
-
-// console.log(`El perímetro de la figura es ${ poligono }`);
-// }
-
-// perimetro(2, 3, 5, 7, 8);
-
-// const suma = function (...numeros) {
-// let suma = 0;
-// let contador = 0;
-
-// while (contador<numeros.length) {
-// suma += numeros[contador];
-// contador++;
-// }
-
-// return suma
-// }
+ return suma
+ }
 
 // console.log(`la suma es ${suma(2, 4, 5, 6)}`);
+```
 
 # Funciones anónimas y funciones flecha (Teoría) 20/102
 
 ## **Funciones anónimas**
 
-// Funciones que no tienen nombre
-// Se pueden usar entre otras cosas para encapsular otras funciones
+ #### Funciones que no tienen nombre
+ ```js
+ Se pueden usar entre otras cosas para encapsular otras funciones
+ (function () {
+ // código
+ });
 
-// (function () {
-// // código
-// });
-// Definición
+ Definición
 
-// (function () {
-// // código
-// })();
-// Ejecución
+ (function () {
+ // código
+ })();
+
+ Ejecución
+```
 
 ## **Funciones de flecha**
 
-// Hay que definir una variable o una función anónima para crearlas
-// Buscan simplificar la sintaxis del código
+ Hay que definir una variable o una función anónima para crearlas
+ Buscan simplificar la sintaxis del código
 
 #### funcion normal
-
-// function iniciarUI(param1, param2) {
-// // código
-// }
-
+```js
+ function iniciarUI(param1, param2) {
+ // código
+ }
+```
 #### función flecha
+```js
+ const iniciarUI = (param1, param2) => {
+ // código
+ }
 
-// const iniciarUI = (param1, param2) => {
-// // código
-// }
-
-// - Si la función flecha solo tiene un parámetro podemos eliminar los paréntesis.
-// - Si solo tiene una linea de código, no es necesario poner las llaves ni el return, que en estos casos está implícito
-
+ - Si la función flecha solo tiene un parámetro podemos eliminar los paréntesis.
+ - Si solo tiene una linea de código, no es necesario poner las llaves ni el return, que en estos casos está implícito
+```
 #### Ejemplo:
 
 ```js
@@ -546,7 +555,7 @@ function gradosCaK(valor) {
   return valor * 274.15;
 }
 
-// simplificar la sintaxis para convertirla en funcion flecha
+#### simplificar la sintaxis para convertirla en funcion flecha
 
 const gradosCaK = (valor) => valor * 274.15;
 ```
@@ -569,18 +578,18 @@ const gradosCaK = (valor) => valor * 274.15;
 ```
 
 # Generadores (teoria) 24/102
+```js
+ function\* secuencia(){
+ yield 1
+ yield 2
+ yield 3
+ return 4
+ }
 
-// function\* secuencia(){
-// yield 1
-// yield 2
-// yield 3
-// return 4
-// }
-
-// let generator = secuencia();
-// let uno = generator.next();
-// let dos = generator.next();
-
+ let generator = secuencia();
+ let uno = generator.next();
+ let dos = generator.next();
+```
 # Generadores (practica) 25/102
 
 ```js
@@ -725,10 +734,12 @@ console.log(res(5));
 
 # String (teoría) 28/102
 
- ```js
- ------------------------------------------------------------------------------------------
- |text0.length;      | Conocer la longitud                                                |
- |texto[7]=;         | Conocer un caracter en concreto. Basados en el índice              |
+
+
+ |Método             | Valor                                    |
+ |--|--|
+ |text0.length;      | Conocer la longitud                                                       |
+ |texto[7]=;         | Conocer un caracter en concreto. Basados en el índice                                                   |
  |texto.indexOf();   | Regresa el indice de la primera ocurrencia del texto a buscar      |
  |texto.lasIndexOf();| Regresa el indice de la última ocurrencia del texto a buscar       |
  |texto.slice();     |Extrae una parte del texto y lo devuelve                            |
@@ -739,9 +750,8 @@ console.log(res(5));
  |texto.concat();    |Une dos o más cadenas de texto                                      |
  |texto.trim();      |elimina los espacios al principio y final del texto                 |
  |texto.split();     |Convierte una cadena de texto en arreglo definido por un separador  |
---------------------------------------------------------------------------------------------
-```
-# Arreglos (Teoría)
+
+# Arreglos (Teoría) 29/102
 ```js
 ---------------------------
  | 4 | 1 | 8 | 10 | 0 | 9 | -> arreglo
@@ -820,7 +830,7 @@ console.log(res(5));
 # Metodos clásicos de arreglos (teoría) 31/102
 ```js
 // Notación:
- variable . metodo (params)
+ variable . método (params)
 
 // Insertar un nuevo elemento al final del arreglo
  variable . push (params)
