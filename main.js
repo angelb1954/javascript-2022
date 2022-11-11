@@ -1960,6 +1960,19 @@
 
 // (1) objeto a eliminar
 
+// Resumen y ejemplo de crear elementos con .appendChild
+
+
+// El método .appendChild() agrega un elemento HTML como "elemento secundario" de otro.
+
+// El argumento del método es el elemento que se agrega. El nodo antes del punto . es el elemento que contendrá el nuevo nodo.
+
+// CÓDIGO DE EJEMPLO
+// let newNode = document​.createElement('p');
+// newNode​.textContent = 'some words';
+// document​.body​.appendChild(newNode);
+// El newNode es un elemento HTML p. Tiene 'some words' como su .textContent. El newNode se agrega al elemento body. Si hay otros nodos dentro del body, el newNode será el último en la lista.
+
 
 // DOM Crear elementos HTML (prácticas) 60/102
 
@@ -3465,33 +3478,33 @@
 
 //JSON (prácticas) 92/102
 
-{
-    "nombre": "Marcos",
-    "edad": -14.5,
-    "elementos":{
-        "titulo": "Elemento 1",
-        "completo": true,
-        "habilidades":[
-            {
-                "id": 0,
-                "fecha": "12/12/2020"
-            },
-            {
-                "id": 0,
-                "fecha": "12/12/2020"
-            },
-            {
-                "id": 0,
-                "fecha": "12/12/2020"
-            }
-        ],
-        "lenguajes":{
-            "lenguage01": {
-                "nombre": "Javascript"
-            }
-        }
-    }
-}
+// {
+//     "nombre": "Marcos",
+//     "edad": -14.5,
+//     "elementos":{
+//         "titulo": "Elemento 1",
+//         "completo": true,
+//         "habilidades":[
+//             {
+//                 "id": 0,
+//                 "fecha": "12/12/2020"
+//             },
+//             {
+//                 "id": 0,
+//                 "fecha": "12/12/2020"
+//             },
+//             {
+//                 "id": 0,
+//                 "fecha": "12/12/2020"
+//             }
+//         ],
+//         "lenguajes":{
+//             "lenguage01": {
+//                 "nombre": "Javascript"
+//             }
+//         }
+//     }
+// }
 
 
 // Solicitudes HTTP (Teoría) 93/102
@@ -3538,3 +3551,375 @@
 // Ver backend/tutorial.http
 
 // Solicitudes con XMLHttpRequest (Teoría) 96/102
+
+// XHR - GET
+
+// 1. Crear un objeto XMLHttpRequest
+// 2. Definir un callback para el eventListener cuando cargue la solicitud
+// 3. Definir el tipo de solicitud y sitio a solicitar
+// 4. Enviar solicitud
+
+// // (1) XHR - Crear un objeto XHttpRequest
+
+// const xhr = new XMLHttpRequest();
+
+// // (2) XHR - Definir callbacks para el eventListener 
+
+// load: cuando la solicitud ha sido completada, sin importar si hay error o no.
+// progress: cuando la solicitud está en ejecución
+// readystatechange: cuando cambia el atributo readyState de la solicitud.
+// error: cuando la solicitud no se completó por un problema
+// readystatechange: cuando cambia el atributo readyState de la solicitud.
+
+// |Valor |  Estado      | Descripción                     |
+// |--|--|--|
+// |0 |    UNINITIALIZED | Todavia no se llamó a open()    |
+// |1 |    LOADING       | Todavia no se llamó a send() 
+// |2 |    LOADED        | send() ya fue invocado y los encabezados y el estado están disponibles
+// |3 |    INTERACTIVE   | Descargando; responseText contiene información parcial |
+// |4 |    COMPLETED     | La operación está terminada
+        
+
+// status : el resultado de la solicitud HTTP 
+
+// |Number   | Description                         |
+// |--|--|
+// |200      | OK                                  |
+// |400      | Bad Request                         |
+// |404      | Not found                           |
+// |500      | Internal Server Error               |
+// |501      | Not implemented                     |
+// |502      | Bad Gateway                         |
+// |503      | Service Unavailable                 |     
+// |504      | Gateway Timeout                     |
+
+
+//  xhr.addEventListener ('load',  load', e => {
+// if(e.target.status==200){
+// console . log (xhr.response);
+// }
+// });
+
+// // XHR - Definir el tipo de solicitud y sitio a
+// // solicitar
+
+// (3) xhr.open('GET', 'http : //www.vidamrr.com') ;
+
+
+// // XHR-Enviar solicitud
+// (4) xhr.send();
+
+// // Una solicitud POST es practicamente lo mismo
+
+// XHR - POST
+
+// const xhr = new XMLHttpRequest()
+// xhr.addEventListener ('load',  load', e => {
+// if(e.target.status==200){
+// console . log (xhr.response);
+// }
+// });
+// xhr.open('POST', 'http : //www.vidamrr.com') ;
+// xhr.send();
+
+// Solicitudes GET con XMLHttpRequest (práctica) 97/102
+
+// const contenedor = document.querySelector('#resultado');
+//  const xhr = new XMLHttpRequest();
+
+// xhr.addEventListener('load', e => {
+//      if(xhr.status == 200){
+//          // contenedor.innerHTML = xhr.response;
+//         // console.log('respuesta entregada')
+//      console.log(e.target);
+//     }
+// });
+
+//  xhr.addEventListener('progress', e => {
+//      console.log('cargando...');
+//      contenedor.textContent = 'Cargando...';
+//  });
+
+// xhr.open('GET', 'http://localhost:5500');
+// xhr.send(); 
+// // console.log('conexión terminada');
+
+// Solicitudes POST con XMLHttpRequest (práctica) 98/102
+//(PENDIENTE DE REVISAR)
+
+// function get(url, method, successCallback, progressCallback, errorCallback) {
+//   const xhr = new XMLHttpRequest();
+
+//   xhr.addEventListener("load", (e) => {
+//      if(xhr.status == 200){
+//             contenedor.innerHTML = xhr.response;
+//         } 
+//     successCallback(e.target.response);
+//   });
+
+//   xhr.addEventListener("progress", (e) => {
+//      console.log('cargando...');
+//         contenedor.textContent = 'Cargando...'; 
+//     progressCallback(e);
+//   });
+
+//   xhr.addEventListener("error", (e) => {
+//     errorCallback(e);
+//   });
+
+//   xhr.open(method, url);
+//   xhr.send();
+// }
+
+// get(
+//   "http://localhost:5500",
+//   "GET",
+//   (res) => {
+//     console.log(res);
+//   },
+//   (progress) => {},
+//   (error) => {}
+// );
+
+// const xhr = new XMLHttpRequest();
+
+// xhr.addEventListener("load", (e) => {
+//   if (xhr.status == 200) {
+//     console.log(JSON.parse(xhr.response));
+//     contenedor.innerHTML = xhr.response;
+//   }
+// });
+
+// xhr.addEventListener("progress", (e) => {
+//   console.log("cargando...");
+//   contenedor.textContent = "Cargando...";
+// });
+
+// xhr.open("POST", "http://localhost:5500/");
+// //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// xhr.setRequestHeader("Content-Type", "application/json");
+// const data = { nombre: "Marcos", edad: 28 };
+// xhr.send(JSON.stringify(data));
+
+// function post(url, options, successCallback, progressCallback, errorCallback) {
+//   const xhr = new XMLHttpRequest();
+
+//   xhr.addEventListener("load", (e) => {
+//     /* if(xhr.status == 200){
+//             contenedor.innerHTML = xhr.response;
+//         } */
+//     successCallback(e.target.response);
+//   });
+
+//   xhr.addEventListener("progress", (e) => {
+//     /* console.log('cargando...');
+//         contenedor.textContent = 'Cargando...'; */
+//     progressCallback(e);
+//   });
+
+//   xhr.addEventListener("error", (e) => {
+//     errorCallback(e);
+//   });
+
+//   xhr.open(options.method, url);
+//   xhr.setRequestHeader("Content-Type", options.headers["content-type"]);
+//   xhr.send(JSON.stringify(options.body));
+// }
+
+// post(
+//   "http://localhost:5500",
+//   {
+//     method: "POST",
+//     headers: {
+//       "content-type": "application/json",
+//     },
+//     body: { nombre: "Lena", edad: 29 },
+//   },
+//   (res) => {
+//     console.log(JSON.parse(res));
+//   },
+//   (progress) => {},
+//   (error) => {}
+// );
+
+// Solicitudes POST con XMLHttpRequest (práctica) 98/102
+// (PENDIENTE DE REVISAR)
+// const contenedor =document.querySelector('#resultado');
+// const xhr = new XMLHttpRequest();
+
+//  xhr.addEventListener('load', e => {
+//     if(xhr.status === 200){
+//          console.log('Respuesta entregda', JSON.parse(xhr.response).datos.nombre);
+//         contenedor.innerHTML = xhr.response;
+//      }
+//  });
+
+// xhr.addEventListener('progress', e => {
+//     console.log('cargando...');
+//     contenedor.textContent = 'Cargando...';
+// });
+
+// xhr.open('POST', 'http://localhost:5500/');
+// xhr.setRequestHeader("Content-Type", "application/json");
+//  const data = { "nombre": "Marcos", "edad": 28 };
+
+// xhr.send(JSON.stringify(data));
+// console.log('conexión terminada, xhr.response');
+
+// Solicitudes HTTP con XMLHttpRequest y callbacks (práctica) 99/102
+//(PENDIENTE DE REVISAR)
+// const xhr = new XMLHttpRequest();
+// xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+// xhr.send(JSON.stringify(data)); 
+
+// function post(url, options, successCallback, progressCallback, errorCallback){
+//     const xhr = new XMLHttpRequest();
+
+//     xhr.addEventListener('load', e => {
+//         /* if(xhr.status == 200){
+//             contenedor.innerHTML = xhr.response;
+//         } */
+//         successCallback(e.target.response);
+//     });
+
+//     xhr.addEventListener('progress', e => {
+//         /* console.log('cargando...');
+//         contenedor.textContent = 'Cargando...'; */
+//         progressCallback(e);
+//     });
+
+//     xhr.addEventListener('error', e => {
+//         errorCallback(e);
+//     });
+
+//     xhr.open(options.method, url);
+//     xhr.setRequestHeader('Content-Type', options.headers['content-type']);
+//     xhr.send(JSON.stringify(options.body))
+// }
+
+// post('http://localhost:5500', {
+//     method: 'POST', 
+//     headers: {
+//         'content-type': 'application/json'
+//     },
+//     body: {nombre: 'Lena', edad: 29}
+// }, res => {
+//     console.log(JSON.parse(res));
+// }, progress => {
+
+// }, error => {
+// });
+
+// Fetch (Teoria) 100/102
+
+// Es el método más moderno para solicitudes.
+// La API Fetch proporciona una interfaz para obtener recursos (incluso a traves de la red). Parecera familiar a quien sea que haya usado XMLHttpRequest, pero proporciona un conjunto de características más potentes y flexibles. Este artículo explica algunos de los conceptos básicos de la API Fetch.
+
+// Funcionamiento de fetch
+
+// 1. Especificar URL
+// fetChC http : //www.vidamrr.com ' )
+
+// 2. Definir método y headers
+// {
+//     method:' POST',
+// body: data,
+// headers :
+// ' Content-Type': 'application/x-www-form-urlencoded '
+// }
+
+// 3. Resolver promesa
+// .then(response => {
+// // codigo
+// return response. json(); // -> otra promesa
+                 
+// 4. Resolver promesa encadenada para texto o JSON
+// . then(result => {
+// //codigo
+// });
+
+// Resumen:
+
+//             Solicitud
+// ----------------------------------------
+// |fetch('http://www.vidamrr.com', {       |  
+// |    method: 'POST',                     |
+// |    body: data,                         |
+// |   headers: {                           |
+//     Content-Type': 'application/json'    |
+// |    }                                   |
+// |})                                      |
+// -----------------------------------------
+//             Respuesta
+// ----------------------------------
+// |                                 |
+// |.then(response=>{                |
+// |    return response.json();      |
+// | })                              |
+// |.then(result=>{                  |
+// | })                              |
+// ----------------------------------
+
+// Fetch (prácticas) 101/102
+
+//  const contenedor = document.querySelector('#resultado');
+
+// fetch('http://localhost:3000')
+// .then(respuesta => {
+//     console.log(respuesta);
+//     return respuesta.json()
+// })
+// .then(resultado => {
+//     console.log(resultado.datos[0].title);
+//     contenedor.innerHTML = resultado.datos[0].title;
+    
+// });
+
+// .then(texto => {
+//     contenedor.innerHTML = texto;
+//     console.log(texto);
+// });
+
+// fetch('http://localhost:3000',{
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({'curso': 'Javascript'})
+    
+// })
+
+// . then( respuesta=> respuesta.json())
+// . then(json =>{
+// console. log(json);
+// })
+// . catch( error => {
+// console.error(error);
+// });
+
+
+
+//Fetch con asyncawait (práctica) 102/102
+
+// function get(){
+//   fetch("http://localhost:3000/api")
+//     .then((res) => res.json())
+//     .then((data) => console.log(data));
+// }
+// get();
+
+
+
+
+// ( async () => {
+//     try {
+//         const res = await fetch('http://localhost:5500',);
+//         console.log(res);
+//         console.log('Termina la solicitud HTTP');    
+//     } catch (error) {
+//         console.error(error);
+//     }
+    
+// })();
+
