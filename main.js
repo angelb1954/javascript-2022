@@ -801,7 +801,7 @@
 
 //  console.log('coordenadas', coordenadas);
 
-//  //indexOf para buscar el indice de un elemento
+//  indexOf para buscar el indice de un elemento
 //  const posicion = coordenadas.indexOf(14.334);
 
 //  console.log('indexof', posicion, coordenadas[posicion]);

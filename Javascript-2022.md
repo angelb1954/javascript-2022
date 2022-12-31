@@ -325,7 +325,7 @@ Código encapsulado que puede ser ejecutado en diferentes etapas de un programa
    const iniciarUI(2) = function (param1, param2) {
          // código
    }
-````
+```
 
 # DEFINIR FUNCIONES 17/102
 
